@@ -215,36 +215,51 @@
             </div>
         </section>
 
-                <section class="grid-section" style="margin-top: 6rem; margin-bottom: 6rem;">
+       <!-- gallery image  -->
+                    <section class="grid-section" style="margin-top: 6rem; margin-bottom: 6rem;">
             <h2 class="section-title" style="margin-bottom: 1rem;">Glimpses of Our Impact</h2>
             <p style="text-align: center; color: var(--text-light); margin-bottom: 3rem;">Swipe to see moments from our past initiatives.</p>
             
-            <div style="display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 1.5rem; padding-bottom: 2rem; scrollbar-width: none; -ms-overflow-style: none;">
+            <div id="impact-carousel" style="display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 1.5rem; padding-bottom: 2rem; scrollbar-width: none; -ms-overflow-style: none;">
                 
-                <style> div::-webkit-scrollbar { display: none; } </style>
+                <style> #impact-carousel::-webkit-scrollbar { display: none; } </style>
                 
-                <a href="programs.html" class="hover-photo-container glass-card" style="min-width: 80vw; max-width: 400px; height: 300px; scroll-snap-align: center; padding: 0.5rem; flex-shrink: 0; display: block;">
+                <a href="programs.html" class="hover-photo-container glass-card" style="min-width: 85vw; max-width: 380px; height: 380px; scroll-snap-align: center; padding: 0.5rem; flex-shrink: 0; display: block;">
                     <img src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="2024 STEM Hackathon" style="width: 100%; height: 100%; object-fit: cover; border-radius: 16px;">
                     <div style="position: absolute; bottom: 1.5rem; left: 1.5rem; background: rgba(255,255,255,0.95); color: var(--text-dark); padding: 0.5rem 1.2rem; border-radius: 12px; font-weight: 700; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
                         2024 STEM Hackathon
                     </div>
                 </a>
 
-                <a href="programs.html" class="hover-photo-container glass-card" style="min-width: 80vw; max-width: 400px; height: 300px; scroll-snap-align: center; padding: 0.5rem; flex-shrink: 0; display: block;">
+                <a href="programs.html" class="hover-photo-container glass-card" style="min-width: 85vw; max-width: 380px; height: 380px; scroll-snap-align: center; padding: 0.5rem; flex-shrink: 0; display: block;">
                     <img src="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Team Ruby Winning" style="width: 100%; height: 100%; object-fit: cover; border-radius: 16px;">
                     <div style="position: absolute; bottom: 1.5rem; left: 1.5rem; background: rgba(255,255,255,0.95); color: var(--text-dark); padding: 0.5rem 1.2rem; border-radius: 12px; font-weight: 700; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
                         Team Ruby Winners
                     </div>
                 </a>
 
-                <a href="programs.html" class="hover-photo-container glass-card" style="min-width: 80vw; max-width: 400px; height: 300px; scroll-snap-align: center; padding: 0.5rem; flex-shrink: 0; display: block;">
+                <a href="programs.html" class="hover-photo-container glass-card" style="min-width: 85vw; max-width: 380px; height: 380px; scroll-snap-align: center; padding: 0.5rem; flex-shrink: 0; display: block;">
                     <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="2025 Virtual Program" style="width: 100%; height: 100%; object-fit: cover; border-radius: 16px;">
                     <div style="position: absolute; bottom: 1.5rem; left: 1.5rem; background: rgba(255,255,255,0.95); color: var(--text-dark); padding: 0.5rem 1.2rem; border-radius: 12px; font-weight: 700; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
                         2025 Virtual Program
                     </div>
                 </a>
-
             </div>
+            
+            <script>
+                document.addEventListener("DOMContentLoaded", () => {
+                    const carousel = document.getElementById('impact-carousel');
+                    if(!carousel) return;
+                    setInterval(() => {
+                        if (carousel.scrollLeft >= (carousel.scrollWidth - carousel.clientWidth - 10)) {
+                            carousel.scrollTo({ left: 0, behavior: 'smooth' });
+                        } else {
+                            // Scrolls right by exactly one square width + gap
+                            carousel.scrollBy({ left: 395, behavior: 'smooth' });
+                        }
+                    }, 3500); 
+                });
+            </script>
         </section>
 
              <section class="grid-section" id="news">
