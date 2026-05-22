@@ -29,9 +29,12 @@ html {
     font-size: clamp(14px, 0.95vw, 16px);
 }
 
-/* Base body styles */
+/* Base body styles with radial gradients for depth */
 body {
     background-color: var(--bg-base);
+    background-image: 
+        radial-gradient(circle at 10% 10%, rgba(155, 114, 200, 0.15), transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(107, 58, 110, 0.08), transparent 40%);
     font-family: 'DM Sans', sans-serif;
     color: var(--text-dark);
     line-height: 1.6;
@@ -39,6 +42,20 @@ body {
     font-size: 1rem;
     font-weight: 400;
     letter-spacing: 0.3px;
+}
+
+/* Subtle Noise Texture Overlay - instantly makes the site feel premium */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0; 
+    left: 0; 
+    width: 100vw; 
+    height: 100vh;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    opacity: 0.04; /* Very subtle grain */
+    z-index: -3; /* Stays at the very back */
+    pointer-events: none;
 }
 
 /* Paragraph styling for better readability */
@@ -163,55 +180,61 @@ main > section {
 }
 
 /* ========================================
-   ANIMATED BACKGROUND BLOBS
+   DYNAMIC BACKGROUND (Canvas & Soft Blobs)
    ======================================== */
-/* Container for floating background blobs - stays fixed behind all content */
+/* Container for the interactive interconnected particles */
+#canvas-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1; /* Above the noise, below the content */
+    pointer-events: none; 
+}
+
+/* Container for floating background blobs */
 .bg-blobs {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    z-index: -1; /* Stays behind all page content */
-    pointer-events: none; /* Doesn't interfere with user interactions */
+    z-index: -2; /* Behind the canvas */
+    pointer-events: none; 
 }
 
-/* Individual blob element - creates soft, blurred circular shapes */
+/* Individual blob element - softened for depth */
 .blob {
     position: absolute;
-    filter: blur(90px); /* Heavy blur creates soft edges */
-    opacity: 0.5; /* Semi-transparent for subtle effect */
-    animation: float 12s infinite alternate ease-in-out; /* Continuous gentle floating motion */
-    border-radius: 50%; /* Makes it circular */
+    filter: blur(120px); /* Heavier blur for a softer, glowing effect */
+    opacity: 0.35; /* Lower opacity so it doesn't wash out text */
+    animation: float 15s infinite alternate ease-in-out; 
+    border-radius: 50%; 
 }
 
-/* First blob - purple tint, positioned top-left */
+/* First blob - purple tint */
 .blob-1 {
-    width: 500px;
-    height: 500px;
+    width: 50vw;
+    height: 50vw;
     background: #e8d8f8;
     top: -10%;
-    left: -5%;
+    left: -10%;
 }
 
-/* Second blob - white tint, positioned bottom-right with delayed animation */
+/* Second blob - white tint */
 .blob-2 {
-    width: 600px;
-    height: 600px;
-    background: #ffffff; /* White color */
-    bottom: -10%;
-    right: -5%;
-    animation-delay: 3s; /* Starts animation 3 seconds later for staggered effect */
+    width: 60vw;
+    height: 60vw;
+    background: #ffffff;
+    bottom: -20%;
+    right: -10%;
+    animation-delay: 4s; 
 }
 
-/* Floating animation - makes blobs gently move and scale */
 @keyframes float {
-    0% {
-        transform: translate(0, 0) scale(1); /* Start at original position and size */
-    }
-    100% {
-        transform: translate(40px, 60px) scale(1.05); /* Move right/down and slightly enlarge */
-    }
+    0% { transform: translate(0, 0) scale(1); }
+    100% { transform: translate(50px, 80px) scale(1.1); }
 }
 
 /* ========================================
