@@ -252,39 +252,34 @@ main > section {
 /* ========================================
    NAVIGATION BAR
    ======================================== */
-/* Main navigation header - sticky positioning keeps it visible while scrolling */
 .glass-nav {
-    display: flex; /* Using Flexbox for bulletproof alignment */
-    justify-content: space-between; 
-    align-items: center; 
-    padding: 1.2rem 5%; 
-    position: sticky; 
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    padding: 1.2rem 5%;
+    position: sticky;
     top: 0;
-    z-index: 100; 
+    z-index: 100;
     border-bottom-left-radius: 24px;
     border-bottom-right-radius: 24px;
-    animation: slideInFromLeft 0.6s ease-out; 
+    animation: slideInFromLeft 0.6s ease-out;
 }
 
-/* Force 3 columns using Flexbox without stretching */
-.glass-nav > .logo { 
-    flex: 1; 
-    display: flex; 
-    justify-content: flex-start; 
+/* Force elements to their proper sides so they don't stretch */
+.glass-nav .logo { 
+    justify-self: start; 
 }
 
-.glass-nav > nav { 
-    flex: 2; 
-    display: flex; 
-    justify-content: center; 
+.glass-nav nav { 
+    justify-self: center; 
 }
 
-.glass-nav > .nav-btn { 
-    display: inline-block; 
-    margin-left: auto; 
+.glass-nav .nav-btn { 
+    justify-self: end; 
+    width: max-content !important; /* This is the magic rule that stops the button from stretching! */
 }
 
-/* Logo styling - prominent, purple color with letter spacing */
+/* Logo styling */
 .logo {
     font-size: 1.8rem;
     color: var(--primary-purple);
@@ -292,14 +287,14 @@ main > section {
     letter-spacing: -0.5px; 
 }
 
-/* Navigation links container - horizontal list of navigation items */
+/* Navigation links container */
 .nav-links {
     display: flex;
     list-style: none; 
     gap: 2rem; 
 }
 
-/* Individual navigation link styling - smooth transitions for hover effects */
+/* Individual navigation link styling */
 .nav-links a {
     text-decoration: none;
     color: var(--text-dark);
@@ -308,52 +303,11 @@ main > section {
     transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
 }
 
-/* Navigation link hover state - changes color and moves up slightly */
+/* Navigation link hover state */
 .nav-links a:hover {
     color: var(--primary-purple); 
     transform: translateY(-2px); 
 }/* ========================================
-   BUTTON STYLES
-   ======================================== */
-/* Primary button - solid black, used for main CTAs (Call To Action) */
-.btn-primary {
-    background-color: #000000; /* Solid black background */
-    color: #ffffff; /* White text for contrast */
-    padding: 0.8rem 1.8rem; /* Comfortable padding for clicking */
-    border-radius: 30px; /* Rounded pill shape */
-    text-decoration: none;
-    font-weight: 500;
-    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Smooth animations */
-    display: inline-block; /* Allow padding and sizing */
-}
-
-/* Primary button hover state - lifts up with shadow for interactive feedback */
-.btn-primary:hover {
-    transform: translateY(-3px); /* Move up 3px */
-    box-shadow: 0 12px 24px rgba(0,0,0,0.2); /* Add shadow beneath */
-}
-
-/* Secondary button - transparent with border, used for less prominent CTAs */
-.btn-secondary {
-    background-color: transparent;
-    color: var(--text-dark);
-    padding: 0.8rem 1.8rem;
-    border-radius: 30px;
-    text-decoration: none;
-    font-weight: 500;
-    border: 1px solid var(--text-dark); /* Bordered style */
-    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    display: inline-block;
-}
-
-/* Secondary button hover state - fills background on hover */
-.btn-secondary:hover {
-    background-color: var(--text-dark); /* Fill with dark color */
-    color: #ffffff; /* Change text to white */
-    transform: translateY(-3px); /* Lift up with primary button */
-}
-
-/* ========================================
    HERO SECTION
    ======================================== */
 /* Hero container - centered intro section at top of page */
