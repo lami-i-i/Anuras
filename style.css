@@ -254,53 +254,65 @@ main > section {
    ======================================== */
 /* Main navigation header - sticky positioning keeps it visible while scrolling */
 .glass-nav {
-   /* Fix for the 3-column grid alignment */
-.glass-nav > .logo { justify-self: start; }
-.glass-nav > nav { justify-self: center; }
-.glass-nav > .nav-btn { justify-self: end; } 
-    display: grid;
-    grid-template-columns: 1fr auto 1fr;
-    align-items: center;
-    padding: 1.2rem 5%; /* Padding for breathing room */
-    position: sticky; /* Stays at top while scrolling */
+    display: flex; /* Using Flexbox for bulletproof alignment */
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 1.2rem 5%; 
+    position: sticky; 
     top: 0;
-    z-index: 100; /* High z-index so it appears above other content */
+    z-index: 100; 
     border-bottom-left-radius: 24px;
     border-bottom-right-radius: 24px;
-    animation: slideInFromLeft 0.6s ease-out; /* Slides in from left on page load */
+    animation: slideInFromLeft 0.6s ease-out; 
+}
+
+/* Force 3 columns using Flexbox without stretching */
+.glass-nav > .logo { 
+    flex: 1; 
+    display: flex; 
+    justify-content: flex-start; 
+}
+
+.glass-nav > nav { 
+    flex: 2; 
+    display: flex; 
+    justify-content: center; 
+}
+
+.glass-nav > .nav-btn { 
+    display: inline-block; 
+    margin-left: auto; 
 }
 
 /* Logo styling - prominent, purple color with letter spacing */
 .logo {
     font-size: 1.8rem;
     color: var(--primary-purple);
-    font-weight: 700; /* Bold weight */
-    letter-spacing: -0.5px; /* Tighter letter spacing for premium look */
+    font-weight: 700; 
+    letter-spacing: -0.5px; 
 }
 
 /* Navigation links container - horizontal list of navigation items */
 .nav-links {
     display: flex;
-    list-style: none; /* Remove default bullet points */
-    gap: 2rem; /* Space between links */
+    list-style: none; 
+    gap: 2rem; 
 }
 
 /* Individual navigation link styling - smooth transitions for hover effects */
 .nav-links a {
     text-decoration: none;
     color: var(--text-dark);
-    font-weight: 500; /* Medium weight for prominence */
-    font-size: 0.95rem; /* Slightly smaller than body text */
-    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Smooth animation */
+    font-weight: 500; 
+    font-size: 0.95rem; 
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
 }
 
 /* Navigation link hover state - changes color and moves up slightly */
 .nav-links a:hover {
-    color: var(--primary-purple); /* Change to purple on hover */
-    transform: translateY(-2px); /* Move up 2px for lift effect */
-}
-
-/* ========================================
+    color: var(--primary-purple); 
+    transform: translateY(-2px); 
+}/* ========================================
    BUTTON STYLES
    ======================================== */
 /* Primary button - solid black, used for main CTAs (Call To Action) */
