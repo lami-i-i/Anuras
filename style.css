@@ -254,6 +254,10 @@ main > section {
    ======================================== */
 /* Main navigation header - sticky positioning keeps it visible while scrolling */
 .glass-nav {
+   /* Fix for the 3-column grid alignment */
+.glass-nav > .logo { justify-self: start; }
+.glass-nav > nav { justify-self: center; }
+.glass-nav > .nav-btn { justify-self: end; } 
     display: grid;
     grid-template-columns: 1fr auto 1fr;
     align-items: center;
