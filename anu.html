@@ -115,16 +115,36 @@
     </div>
 
     <main>
-        <section class="hero-clean">
-            <h1>Empowering Girls to Explore and Thrive in STEAM</h1>
-            <p class="subtext">
-                Ànúrà is a social impact initiative helping young girls and women discover confidence in science, technology, engineering, arts, and mathematics through creativity, resources, and community.
+      <section class="split-section" style="margin-top: 3rem;">
+        <div class="hero-text" style="padding-right: 2rem;">
+            <h1 style="font-size: 4rem; line-height: 1.1; margin-bottom: 1.5rem; letter-spacing: -1.5px;">
+                Empowering Girls to Explore and Thrive in STEAM
+            </h1>
+            <p class="subtext" style="margin-bottom: 2.5rem; text-align: left; font-size: 1.2rem;">
+                Ànúrà is a social impact initiative helping young girls and women discover 
+                confidence in science, technology, engineering, arts, and mathematics through 
+                creativity, resources, and community.
             </p>
-            <div class="hero-buttons">
+            <div style="display: flex; gap: 1rem;">
                 <a href="programs.html" class="btn-primary">Explore Programs</a>
                 <a href="about.html" class="btn-secondary">Learn More</a>
             </div>
-        </section>
+        </div>
+
+        <div style="position: relative; perspective: 1000px;">
+            <a href="programs.html" class="hover-photo-container glass-card" style="display: block; padding: 1rem; transform: rotate(2deg); transition: transform 0.4s ease;">
+                <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                     alt="Girls collaborating on a STEAM project." 
+                     style="width: 100%; height: 400px; object-fit: cover; border-radius: 16px;">
+                
+                <div style="position: absolute; bottom: 2rem; right: 2rem; background: rgba(0,0,0,0.8); color: white; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.85rem; font-weight: 600; backdrop-filter: blur(5px);">
+                    View Programs →
+                </div>
+            </a>
+            
+            <div style="position: absolute; top: -10px; left: -10px; right: 10px; bottom: 10px; border: 2px dashed var(--primary-purple); border-radius: 24px; z-index: -1; transform: rotate(-2deg);"></div>
+        </div>
+    </section>
 
         <section class="split-section" id="about">
             <div class="text-content">
