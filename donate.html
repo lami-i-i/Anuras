@@ -1,173 +1,173 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Support Ànúrà | Donate</title>
-    <link rel="stylesheet" href="style.css">
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">    <style>
-        .donate-container { max-width: 900px; margin: 4rem auto; padding: 0 5%; }
-        .donate-section { margin-bottom: 4rem; }
-        .donate-section h2 { font-size: 1.8rem; color: var(--primary-purple); margin-bottom: 1.5rem; }
-        .donate-section p { font-size: 1.05rem; color: var(--text-light); line-height: 1.8; margin-bottom: 1.5rem; }
-        .impact-list { background: var(--glass-bg); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid var(--glass-border); box-shadow: var(--glass-shadow); padding: 2.5rem; border-radius: 24px; margin: 2rem 0; }
-        .impact-item { display: flex; gap: 1.5rem; margin-bottom: 2rem; }
-        .impact-item:last-child { margin-bottom: 0; }
-        .impact-number { background: var(--primary-purple); color: white; width: 50px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0; }
-        .impact-text h3 { color: var(--primary-purple); margin-bottom: 0.5rem; }
-        .impact-text p { color: var(--text-light); margin: 0; }
-        .donate-options { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin: 2rem 0; }
-        .donate-option { padding: 2rem; border-radius: 24px; background: var(--glass-bg); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 2px solid var(--glass-border); box-shadow: var(--glass-shadow); text-align: center; cursor: pointer; transition: all 0.3s; }
-        .donate-option:hover { border-color: var(--primary-purple); transform: translateY(-4px); }
-        .donate-option h3 { color: var(--primary-purple); margin-bottom: 0.5rem; font-size: 1.5rem; }
-        .back-link { display: inline-block; margin: 2rem 0; color: var(--primary-purple); text-decoration: none; font-weight: 600; }
-        .back-link:hover { text-decoration: underline; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Support Ànúrà | Donate</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://www.google.com/search?q=https://fonts.googleapis.com/css2%3Ffamily%3DDM%2BSans:wght%40400%3B500%3B600%3B700%26family%3DFraunces:ital,wght%400,400%3B0,600%3B0,700%3B1,400%26display%3Dswap" rel="stylesheet">
+<style>
+.donate-container { max-width: 900px; margin: 4rem auto; padding: 0 5%; }
+.donate-section { margin-bottom: 4rem; }
+.donate-section h2 { font-size: 1.8rem; color: var(--primary-purple); margin-bottom: 1.5rem; }
+.donate-section p { font-size: 1.05rem; color: var(--text-light); line-height: 1.8; margin-bottom: 1.5rem; }
+.impact-list { background: var(--glass-bg); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid var(--glass-border); box-shadow: var(--glass-shadow); padding: 2.5rem; border-radius: 24px; margin: 2rem 0; }
+    .impact-item { display: flex; gap: 1.5rem; margin-bottom: 2rem; align-items: center;}
+    .impact-item:last-child { margin-bottom: 0; }
+    
+    /* Updated to fit Naira text comfortably */
+    .impact-number { background: var(--primary-purple); color: white; padding: 0.8rem 1.2rem; border-radius: 16px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.1rem; flex-shrink: 0; box-shadow: 0 4px 15px rgba(155, 114, 200, 0.3); }
+    .impact-text h3 { color: var(--text-dark); margin-bottom: 0.2rem; }
+    .impact-text p { color: var(--text-light); margin: 0; font-size: 0.95rem;}
+    
+    .back-link { display: inline-block; margin: 2rem 0; color: var(--primary-purple); text-decoration: none; font-weight: 600; }
+    .back-link:hover { text-decoration: underline; }
+
+    /* Custom Bank Card Styling */
+    .bank-card {
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.4));
+        border: 1px solid var(--glass-border);
+        border-radius: 24px;
+        padding: 3rem;
+        text-align: center;
+        box-shadow: 0 20px 40px rgba(107, 58, 110, 0.08);
+        position: relative;
+        overflow: hidden;
+    }
+    .bank-card::before {
+        content: "";
+        position: absolute;
+        top: 0; left: 0; width: 100%; height: 6px;
+        background: linear-gradient(90deg, #9b72c8, #e8d8f8);
+    }
+    .account-number {
+        font-family: 'DM Sans', monospace;
+        font-size: 3rem;
+        font-weight: 800;
+        color: var(--primary-purple);
+        letter-spacing: 4px;
+        margin: 1.5rem 0;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.05);
+    }
+</style>
+
 </head>
 <body>
 
-    <div class="bg-blobs">
-        <div class="blob blob-1"></div>
-        <div class="blob blob-2"></div>
-    </div>
+    <div id="canvas-container"></div>
 
-    <header class="glass-nav">
-        <a href="anu.html" class="logo" style="text-decoration: none; display: flex; align-items: center;">
-          <img src="Ànúrà (Logo).png" alt="ÀNÚRÀ Logo" style="height: 40px; width: auto;">
-        </a>
-        <nav>
-            <ul class="nav-links">
-                <li><a href="anu.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="programs.html">Programs</a></li>
-        
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-        <a href="contact.html" class="btn-primary nav-btn">Join Community</a>
-    </header>
+<header class="glass-nav">
+    <a href="anu.html" class="logo" style="text-decoration: none; display: flex; align-items: center;">
+      <img src="Ànúrà (Logo).png" alt="ÀNÚRÀ Logo" style="height: 40px; width: auto;">
+    </a>
+    <nav>
+        <ul class="nav-links">
+            <li><a href="anu.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="programs.html">Programs</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <a href="contact.html" class="btn-primary nav-btn">Join Community</a>
+</header>
 
-    <main>
-        <section class="hero glass-panel hero-container">
-            <h1>Support Ànúrà</h1>
-            <p class="subtext">
-                Your support helps Ànúrà continue providing opportunities, resources, and programs that empower girls to explore and thrive in STEAM.
+<main>
+    <section class="hero glass-panel hero-container">
+        <h1>Support Ànúrà</h1>
+        <p class="subtext">
+            Your support helps Ànúrà continue providing opportunities, resources, and programs that empower girls to explore and thrive in STEAM across Nigeria.
+        </p>
+    </section>
+
+    <div class="donate-container">
+
+        <div class="donate-section reveal-on-scroll">
+            <h2>Why Your Support Matters</h2>
+            <p>Every contribution directly impacts our ability to create learning experiences, provide safe transportation, and fund intensive workshops. Here is exactly what your support helps us achieve:</p>
+        </div>
+
+        <div class="impact-list reveal-on-scroll">
+            <div class="impact-item">
+                <div class="impact-number">₦10k</div>
+                <div class="impact-text">
+                    <h3>Learning Kits</h3>
+                    <p>Provides a beginner-friendly learning guide, digital resources, and a customized STEAM kit for one girl.</p>
+                </div>
+            </div>
+            <div class="impact-item">
+                <div class="impact-number">₦50k</div>
+                <div class="impact-text">
+                    <h3>Transport Support</h3>
+                    <p>Covers logistics and safe transportation for girls from underserved communities to attend our in-person workshops.</p>
+                </div>
+            </div>
+            <div class="impact-item">
+                <div class="impact-number">₦100k+</div>
+                <div class="impact-text">
+                    <h3>Workshop Sponsorship</h3>
+                    <p>Directly funds a quarterly touchpoint or summer workshop, providing venue, internet, and mentorship resources.</p>
+                </div>
+            </div>
+        </div>
+
+        <section class="reveal-on-scroll" style="margin: 5rem 0;">
+            <h2 style="font-size: 2.2rem; margin-bottom: 1rem; color: var(--text-dark); text-align: center;">Make a Direct Transfer</h2>
+            <p style="color: var(--text-light); text-align: center; margin-bottom: 3rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                To avoid third-party fees and ensure 100% of your donation goes directly toward our mission, we accept direct bank transfers to our dedicated initiative account.
+            </p>
+
+            <div class="bank-card">
+                <p style="color: var(--text-light); font-size: 1.1rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 600;">Bank Name</p>
+                <h3 style="font-size: 1.5rem; margin-bottom: 2rem;">[Insert Bank Name]</h3>
+                
+                <p style="color: var(--text-light); font-size: 1.1rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 600;">Account Number</p>
+                <div class="account-number">0123456789</div>
+                
+                <p style="color: var(--text-light); font-size: 1.1rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 600; margin-top: 2rem;">Account Name</p>
+                <h3 style="font-size: 1.5rem;">Ànúrà Initiative</h3>
+            </div>
+
+            <p style="text-align: center; margin-top: 2rem; color: var(--text-light); font-size: 0.95rem;">
+                <em>* Kindly send a receipt or notification to <strong>info.anura@gmail.com</strong> after your transfer so we can properly acknowledge your generous support!</em>
             </p>
         </section>
 
-        <div class="donate-container">
-
-            <div class="donate-section">
-                <h2>Why Your Support Matters</h2>
-                <p>Donations help expand our ability to create learning experiences, share educational resources, and support future initiatives. Every contribution, no matter the size, makes a meaningful difference in the lives of girls exploring STEAM.</p>
-            </div>
-
-            <div class="impact-list">
-                <div class="impact-item">
-                    <div class="impact-number">$10</div>
-                    <div class="impact-text">
-                        <h3>Supports Resource Creation</h3>
-                        <p>Helps us create and distribute beginner-friendly guides and learning materials.</p>
-                    </div>
-                </div>
-                <div class="impact-item">
-                    <div class="impact-number">$25</div>
-                    <div class="impact-text">
-                        <h3>Enables a Workshop</h3>
-                        <p>Supports hosting learning sessions and community activities throughout the year.</p>
-                    </div>
-                </div>
-                <div class="impact-item">
-                    <div class="impact-number">$50</div>
-                    <div class="impact-text">
-                        <h3>Powers Programs</h3>
-                        <p>Helps fund quarterly touchpoints, challenges, and community engagement activities.</p>
-                    </div>
-                </div>
-                <div class="impact-item">
-                    <div class="impact-number">$100+</div>
-                    <div class="impact-text">
-                        <h3>Transforms Opportunities</h3>
-                        <p>Makes significant impact toward our annual Summer Workshop and major initiatives.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="donate-section">
-                <h2>Where Your Donation Goes</h2>
-                <p>We're transparent about how we use donations:</p>
-                <ul style="margin-left: 2rem; color: var(--text-light); line-height: 1.8;">
-                    <li><strong>Resource Development:</strong> Creating educational guides and learning materials</li>
-                    <li><strong>Program Support:</strong> Organizing workshops, challenges, and community activities</li>
-                    <li><strong>Outreach:</strong> Reaching more girls and expanding our community</li>
-                    <li><strong>Technology:</strong> Maintaining platforms and tools that support learning</li>
-                    <li><strong>Mentorship:</strong> Supporting mentors and facilitators who guide participants</li>
-                </ul>
-            </div>
-
-            <section style="margin: 4rem 0; padding: 3rem; border-radius: 24px; background: var(--glass-bg); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid var(--glass-border); box-shadow: var(--glass-shadow); text-align: center;">
-                <h2 style="font-size: 2rem; margin-bottom: 2rem; color: var(--primary-purple);">Make Your Donation</h2>
-                <p style="color: var(--text-light); margin-bottom: 2rem; font-size: 1.05rem;">Ready to support the mission? Choose a donation option or contribute your own amount.</p>
-                <div class="donate-options">
-                    <div class="donate-option">
-                        <h3>$10</h3>
-                        <p style="color: var(--text-light); margin-bottom: 1rem;">Support a girl</p>
-                        <a href="#" class="btn-primary">Donate Now</a>
-                    </div>
-                    <div class="donate-option">
-                        <h3>$25</h3>
-                        <p style="color: var(--text-light); margin-bottom: 1rem;">Empower learning</p>
-                        <a href="#" class="btn-primary">Donate Now</a>
-                    </div>
-                    <div class="donate-option">
-                        <h3>$50</h3>
-                        <p style="color: var(--text-light); margin-bottom: 1rem;">Build community</p>
-                        <a href="#" class="btn-primary">Donate Now</a>
-                    </div>
-                    <div class="donate-option">
-                        <h3>$100+</h3>
-                        <p style="color: var(--text-light); margin-bottom: 1rem;">Transform impact</p>
-                        <a href="#" class="btn-primary">Donate Now</a>
-                    </div>
-                </div>
-                <a href="#" class="btn-secondary" style="display: inline-block; margin-top: 2rem;">Custom Amount</a>
-            </section>
-
-            <div class="donate-section">
-                <h2>Other Ways to Support</h2>
-                <p>Can't donate right now? There are other ways you can support Ànúrà:</p>
-                <ul style="margin-left: 2rem; color: var(--text-light); line-height: 1.8;">
-                    <li><strong>Volunteer:</strong> Contribute your time and skills to help strengthen our initiatives</li>
-                    <li><strong>Partner:</strong> Collaborate with us to expand opportunities for girls in STEAM</li>
-                    <li><strong>Share:</strong> Help spread the word about Ànúrà in your community</li>
-                    <li><strong>Mentor:</strong> Guide and support a girl exploring STEAM</li>
-                </ul>
-                <a href="get-involved.html" class="btn-secondary" style="display: inline-block; margin-top: 2rem;">Learn More About Getting Involved</a>
-            </div>
-
-        </div>
-
-        <a href="anu.html" class="back-link">← Back to Home</a>
-
-    </main>
-
-  <footer class="glass-footer">
-        <div class="footer-content">
-            <a href="anu.html" style="text-decoration: none;" class="footer-logo-link">
-                            <img src="Ànúrà (Logo).png" alt="ÀNÚRÀ Logo" style="height: 40px; width: auto;">
-                                  </a>
-            <ul class="footer-links">
-                <li><a href="about.html">About</a></li>
-                <li><a href="programs.html">Programs</a></li>
-         
-                <li><a href="contact.html">Contact</a></li>
+        <div class="donate-section reveal-on-scroll">
+            <h2>Other Ways to Support</h2>
+            <p>Can't donate right now? There are other ways you can support Ànúrà:</p>
+            <ul style="margin-left: 2rem; color: var(--text-light); line-height: 1.8;">
+                <li><strong>Volunteer:</strong> Contribute your time and skills to help strengthen our initiatives</li>
+                <li><strong>Partner:</strong> Collaborate with us to expand opportunities for girls in STEAM</li>
+                <li><strong>Share:</strong> Help spread the word about Ànúrà in your community</li>
+                <li><strong>Mentor:</strong> Guide and support a girl exploring STEAM</li>
             </ul>
         </div>
-        <div class="footer-bottom">
-            <p>© 2026 Ànúrà Initiative. All rights reserved.</p>
-        </div>
-    </footer>
 
-    <script src="animations.js"></script>
-</body>
+    </div>
+
+    <div style="text-align: center;">
+        <a href="anu.html" class="back-link">← Back to Home</a>
+    </div>
+
+</main>
+
+<footer class="glass-footer">
+    <div class="footer-content">
+        <a href="anu.html" style="text-decoration: none;" class="footer-logo-link">
+            <img src="Ànúrà (Logo).png" alt="ÀNÚRÀ Logo" style="height: 40px; width: auto;">
+        </a>
+        <ul class="footer-links">
+            <li><a href="about.html">About</a></li>
+            <li><a href="programs.html">Programs</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+    <div class="footer-bottom">
+        <p>© 2026 Ànúrà Initiative. All rights reserved.</p>
+    </div>
+</footer>
+
+<script src="animations.js"></script>
+
+    </body>
 </html>
