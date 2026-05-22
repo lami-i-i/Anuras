@@ -250,11 +250,11 @@ main > section {
 }
 
 /* ========================================
-   NAVIGATION BAR
+   NAVIGATION BAR (FIXED BULLETPROOF FLEXBOX)
    ======================================== */
 .glass-nav {
-    display: grid;
-    grid-template-columns: 1fr auto 1fr;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
     padding: 1.2rem 5%;
     position: sticky;
@@ -266,47 +266,32 @@ main > section {
 }
 
 /* Force elements to their proper sides so they don't stretch */
-.glass-nav .logo { 
-    justify-self: start; 
+.glass-nav > a.logo { 
+    flex: 1; 
+    display: flex; 
+    justify-content: flex-start; 
 }
 
-.glass-nav nav { 
-    justify-self: center; 
+.glass-nav > nav { 
+    flex: 2; 
+    display: flex; 
+    justify-content: center; 
 }
 
-.glass-nav .nav-btn { 
-    justify-self: end; 
-    width: max-content !important; /* This is the magic rule that stops the button from stretching! */
+.glass-nav > .btn-primary,
+.glass-nav > .nav-btn { 
+    display: inline-block !important; 
+    margin-left: auto; 
+    width: auto !important;
 }
 
-/* Logo styling */
-.logo {
-    font-size: 1.8rem;
-    color: var(--primary-purple);
-    font-weight: 700; 
-    letter-spacing: -0.5px; 
-}
+.logo { font-size: 1.8rem; color: var(--primary-purple); font-weight: 700; letter-spacing: -0.5px; }
 
-/* Navigation links container */
-.nav-links {
-    display: flex;
-    list-style: none; 
-    gap: 2rem; 
-}
+.nav-links { display: flex; list-style: none; gap: 2rem; }
+.nav-links a { text-decoration: none; color: var(--text-dark); font-weight: 500; font-size: 0.95rem; transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+.nav-links a:hover { color: var(--primary-purple); transform: translateY(-2px); }
 
-/* Individual navigation link styling */
-.nav-links a {
-    text-decoration: none;
-    color: var(--text-dark);
-    font-weight: 500; 
-    font-size: 0.95rem; 
-    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
-}
 
-/* Navigation link hover state */
-.nav-links a:hover {
-    color: var(--primary-purple); 
-    transform: translateY(-2px); 
 }/* ========================================
    HERO SECTION
    ======================================== */
