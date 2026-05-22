@@ -270,6 +270,51 @@ main > section {
 .nav-links { display: flex; list-style: none; gap: 2rem; }
 .nav-links a { text-decoration: none; color: var(--text-dark); font-weight: 500; font-size: 0.95rem; transition: all 0.3s ease; }
 .nav-links a:hover { color: var(--primary-purple); transform: translateY(-2px); }
+
+/* Navigation link hover state - changes color and moves up slightly */
+.nav-links a:hover { color: var(--primary-purple); transform: translateY(-2px); }
+
+/* ========================================
+   BUTTON STYLES
+   ======================================== */
+/* Primary button - solid black, used for main CTAs (Call To Action) */
+.btn-primary {
+    background-color: #000000; 
+    color: #ffffff !important; 
+    padding: 0.8rem 1.8rem; 
+    border-radius: 30px; 
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
+    display: inline-block; 
+}
+
+/* Primary button hover state */
+.btn-primary:hover { 
+    transform: translateY(-3px); 
+    box-shadow: 0 12px 24px rgba(0,0,0,0.2); 
+}
+
+/* Secondary button - transparent with crisp black border */
+.btn-secondary {
+    background-color: transparent;
+    color: #000000 !important; 
+    padding: 0.8rem 1.8rem;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    border: 2px solid #000000 !important; 
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    display: inline-block;
+}
+
+/* Secondary button hover state - fills with black */
+.btn-secondary:hover { 
+    background-color: #000000 !important; 
+    color: #ffffff !important; 
+    transform: translateY(-3px); 
+}
+
 /* ========================================
    HERO SECTION
    ======================================== */
