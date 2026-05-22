@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Support Ànúrà | Donate</title>
-    <link rel="stylesheet" href="style.css?v=2">
+    <link rel="stylesheet" href="style.css?v=3">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&display=swap" rel="stylesheet">
     
     <style>
@@ -17,7 +17,6 @@
         .impact-item { display: flex; gap: 1.5rem; margin-bottom: 2rem; align-items: center;}
         .impact-item:last-child { margin-bottom: 0; }
         
-        /* Updated to fit Naira text comfortably */
         .impact-number { background: var(--primary-purple); color: white; padding: 0.8rem 1.2rem; border-radius: 16px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.1rem; flex-shrink: 0; box-shadow: 0 4px 15px rgba(155, 114, 200, 0.3); }
         .impact-text h3 { color: var(--text-dark); margin-bottom: 0.2rem; }
         .impact-text p { color: var(--text-light); margin: 0; font-size: 0.95rem;}
@@ -25,7 +24,6 @@
         .back-link { display: inline-block; margin: 2rem 0; color: var(--primary-purple); text-decoration: none; font-weight: 600; }
         .back-link:hover { text-decoration: underline; }
 
-        /* Custom Bank Card Styling */
         .bank-card {
             background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.4));
             border: 1px solid var(--glass-border);
@@ -81,13 +79,12 @@
         </section>
 
         <div class="donate-container">
-
-            <div class="donate-section reveal-on-scroll">
+            <div class="donate-section">
                 <h2>Why Your Support Matters</h2>
                 <p>Every contribution directly impacts our ability to create learning experiences, provide safe transportation, and fund intensive workshops. Here is exactly what your support helps us achieve:</p>
             </div>
 
-            <div class="impact-list reveal-on-scroll">
+            <div class="impact-list">
                 <div class="impact-item">
                     <div class="impact-number">₦10k</div>
                     <div class="impact-text">
@@ -111,7 +108,7 @@
                 </div>
             </div>
 
-            <section class="reveal-on-scroll" style="margin: 5rem 0;">
+            <section style="margin: 5rem 0;">
                 <h2 style="font-size: 2.2rem; margin-bottom: 1rem; color: var(--text-dark); text-align: center;">Make a Direct Transfer</h2>
                 <p style="color: var(--text-light); text-align: center; margin-bottom: 3rem; max-width: 600px; margin-left: auto; margin-right: auto;">
                     To avoid third-party fees and ensure 100% of your donation goes directly toward our mission, we accept direct bank transfers to our dedicated initiative account.
@@ -132,24 +129,11 @@
                     <em>* Kindly send a receipt or notification to <strong>info.anura@gmail.com</strong> after your transfer so we can properly acknowledge your generous support!</em>
                 </p>
             </section>
-
-            <div class="donate-section reveal-on-scroll">
-                <h2>Other Ways to Support</h2>
-                <p>Can't donate right now? There are other ways you can support Ànúrà:</p>
-                <ul style="margin-left: 2rem; color: var(--text-light); line-height: 1.8;">
-                    <li><strong>Volunteer:</strong> Contribute your time and skills to help strengthen our initiatives</li>
-                    <li><strong>Partner:</strong> Collaborate with us to expand opportunities for girls in STEAM</li>
-                    <li><strong>Share:</strong> Help spread the word about Ànúrà in your community</li>
-                    <li><strong>Mentor:</strong> Guide and support a girl exploring STEAM</li>
-                </ul>
-            </div>
-
         </div>
 
         <div style="text-align: center;">
             <a href="anu.html" class="back-link">← Back to Home</a>
         </div>
-
     </main>
 
     <footer class="glass-footer">
@@ -168,7 +152,43 @@
         </div>
     </footer>
 
-    <script src="animations.js"></script>
-
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const container = document.getElementById('canvas-container');
+            if (!container) return;
+            const canvas = document.createElement('canvas');
+            const ctx = canvas.getContext('2d');
+            container.appendChild(canvas);
+            let particles = [];
+            let mouse = { x: null, y: null, radius: 120 };
+            window.addEventListener('resize', () => { canvas.width = window.innerWidth; canvas.height = window.innerHeight; initParticles(); });
+            window.addEventListener('mousemove', (e) => { mouse.x = e.clientX; mouse.y = e.clientY; });
+            window.addEventListener('mouseout', () => { mouse.x = null; mouse.y = null; });
+            canvas.width = window.innerWidth; canvas.height = window.innerHeight;
+            class Particle {
+                constructor() { this.x = Math.random() * canvas.width; this.y = Math.random() * canvas.height; this.vx = (Math.random() - 0.5) * 0.5; this.vy = (Math.random() - 0.5) * 0.5; this.radius = Math.random() * 2 + 1; }
+                update() {
+                    this.x += this.vx; this.y += this.vy;
+                    if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+                    if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+                    if (mouse.x && mouse.y) { let dx = mouse.x - this.x; let dy = mouse.y - this.y; let dist = Math.sqrt(dx*dx + dy*dy); if (dist < mouse.radius) { let force = (mouse.radius - dist) / mouse.radius; this.x -= dx / dist * force * 2; this.y -= dy / dist * force * 2; } }
+                }
+                draw() { ctx.beginPath(); ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2); ctx.fillStyle = 'rgba(155, 114, 200, 0.4)'; ctx.fill(); }
+            }
+            function initParticles() { particles = []; let count = Math.floor((canvas.width * canvas.height) / 10000); for(let i=0; i<count; i++) particles.push(new Particle()); }
+            function animateCanvas() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                particles.forEach(p => { p.update(); p.draw(); });
+                for (let i = 0; i < particles.length; i++) {
+                    for (let j = i + 1; j < particles.length; j++) {
+                        let dx = particles[i].x - particles[j].x; let dy = particles[i].y - particles[j].y; let dist = Math.sqrt(dx*dx + dy*dy);
+                        if (dist < 120) { ctx.beginPath(); ctx.moveTo(particles[i].x, particles[i].y); ctx.lineTo(particles[j].x, particles[j].y); ctx.strokeStyle = `rgba(155, 114, 200, ${0.2 * (1 - dist/120)})`; ctx.lineWidth = 1; ctx.stroke(); }
+                    }
+                }
+                requestAnimationFrame(animateCanvas);
+            }
+            initParticles(); animateCanvas();
+        });
+    </script>
 </body>
 </html>
