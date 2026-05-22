@@ -207,8 +207,8 @@ main > section {
 /* Individual blob element - softened for depth */
 .blob {
     position: absolute;
-    filter: blur(120px); /* Heavier blur for a softer, glowing effect */
-    opacity: 0.35; /* Lower opacity so it doesn't wash out text */
+    filter: blur(100px); /* Heavier blur for a softer, glowing effect */
+    opacity: 0.55; /* Lower opacity so it doesn't wash out text */
     animation: float 15s infinite alternate ease-in-out; 
     border-radius: 50%; 
 }
