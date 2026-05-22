@@ -147,6 +147,19 @@ main > section {
 }
 
 /* ========================================
+   DYNAMIC INTERCONNECTED BACKGROUND
+   ======================================== */
+#canvas-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* ========================================
    ANIMATED BACKGROUND BLOBS
    ======================================== */
 /* Container for floating background blobs - stays fixed behind all content */
