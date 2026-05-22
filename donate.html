@@ -1,173 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Support Ànúrà | Donate</title>
-<link rel="stylesheet" href="style.css">
-<link href="https://www.google.com/search?q=https://fonts.googleapis.com/css2%3Ffamily%3DDM%2BSans:wght%40400%3B500%3B600%3B700%26family%3DFraunces:ital,wght%400,400%3B0,600%3B0,700%3B1,400%26display%3Dswap" rel="stylesheet">
-<style>
-.donate-container { max-width: 900px; margin: 4rem auto; padding: 0 5%; }
-.donate-section { margin-bottom: 4rem; }
-.donate-section h2 { font-size: 1.8rem; color: var(--primary-purple); margin-bottom: 1.5rem; }
-.donate-section p { font-size: 1.05rem; color: var(--text-light); line-height: 1.8; margin-bottom: 1.5rem; }
-.impact-list { background: var(--glass-bg); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid var(--glass-border); box-shadow: var(--glass-shadow); padding: 2.5rem; border-radius: 24px; margin: 2rem 0; }
-    .impact-item { display: flex; gap: 1.5rem; margin-bottom: 2rem; align-items: center;}
-    .impact-item:last-child { margin-bottom: 0; }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support Ànúrà | Donate</title>
+    <link rel="stylesheet" href="style.css?v=2">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&display=swap" rel="stylesheet">
     
-    /* Updated to fit Naira text comfortably */
-    .impact-number { background: var(--primary-purple); color: white; padding: 0.8rem 1.2rem; border-radius: 16px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.1rem; flex-shrink: 0; box-shadow: 0 4px 15px rgba(155, 114, 200, 0.3); }
-    .impact-text h3 { color: var(--text-dark); margin-bottom: 0.2rem; }
-    .impact-text p { color: var(--text-light); margin: 0; font-size: 0.95rem;}
-    
-    .back-link { display: inline-block; margin: 2rem 0; color: var(--primary-purple); text-decoration: none; font-weight: 600; }
-    .back-link:hover { text-decoration: underline; }
+    <style>
+        .donate-container { max-width: 900px; margin: 4rem auto; padding: 0 5%; }
+        .donate-section { margin-bottom: 4rem; }
+        .donate-section h2 { font-size: 1.8rem; color: var(--primary-purple); margin-bottom: 1.5rem; }
+        .donate-section p { font-size: 1.05rem; color: var(--text-light); line-height: 1.8; margin-bottom: 1.5rem; }
+        
+        .impact-list { background: var(--glass-bg); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid var(--glass-border); box-shadow: var(--glass-shadow); padding: 2.5rem; border-radius: 24px; margin: 2rem 0; }
+        .impact-item { display: flex; gap: 1.5rem; margin-bottom: 2rem; align-items: center;}
+        .impact-item:last-child { margin-bottom: 0; }
+        
+        /* Updated to fit Naira text comfortably */
+        .impact-number { background: var(--primary-purple); color: white; padding: 0.8rem 1.2rem; border-radius: 16px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.1rem; flex-shrink: 0; box-shadow: 0 4px 15px rgba(155, 114, 200, 0.3); }
+        .impact-text h3 { color: var(--text-dark); margin-bottom: 0.2rem; }
+        .impact-text p { color: var(--text-light); margin: 0; font-size: 0.95rem;}
+        
+        .back-link { display: inline-block; margin: 2rem 0; color: var(--primary-purple); text-decoration: none; font-weight: 600; }
+        .back-link:hover { text-decoration: underline; }
 
-    /* Custom Bank Card Styling */
-    .bank-card {
-        background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.4));
-        border: 1px solid var(--glass-border);
-        border-radius: 24px;
-        padding: 3rem;
-        text-align: center;
-        box-shadow: 0 20px 40px rgba(107, 58, 110, 0.08);
-        position: relative;
-        overflow: hidden;
-    }
-    .bank-card::before {
-        content: "";
-        position: absolute;
-        top: 0; left: 0; width: 100%; height: 6px;
-        background: linear-gradient(90deg, #9b72c8, #e8d8f8);
-    }
-    .account-number {
-        font-family: 'DM Sans', monospace;
-        font-size: 3rem;
-        font-weight: 800;
-        color: var(--primary-purple);
-        letter-spacing: 4px;
-        margin: 1.5rem 0;
-        text-shadow: 2px 2px 4px rgba(0,0,0,0.05);
-    }
-</style>
-
+        /* Custom Bank Card Styling */
+        .bank-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.4));
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 3rem;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(107, 58, 110, 0.08);
+            position: relative;
+            overflow: hidden;
+        }
+        .bank-card::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 6px;
+            background: linear-gradient(90deg, #9b72c8, #e8d8f8);
+        }
+        .account-number {
+            font-family: 'DM Sans', monospace;
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--primary-purple);
+            letter-spacing: 4px;
+            margin: 1.5rem 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.05);
+        }
+    </style>
 </head>
 <body>
 
     <div id="canvas-container"></div>
 
-<header class="glass-nav">
-    <a href="anu.html" class="logo" style="text-decoration: none; display: flex; align-items: center;">
-      <img src="Ànúrà (Logo).png" alt="ÀNÚRÀ Logo" style="height: 40px; width: auto;">
-    </a>
-    <nav>
-        <ul class="nav-links">
-            <li><a href="anu.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="programs.html">Programs</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
-    <a href="contact.html" class="btn-primary nav-btn">Join Community</a>
-</header>
+    <header class="glass-nav">
+        <a href="anu.html" class="logo" style="text-decoration: none; display: flex; align-items: center;">
+          <img src="Ànúrà (Logo).png" alt="ÀNÚRÀ Logo" style="height: 40px; width: auto;">
+        </a>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="anu.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="programs.html">Programs</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <a href="contact.html" class="btn-primary nav-btn">Join Community</a>
+    </header>
 
-<main>
-    <section class="hero glass-panel hero-container">
-        <h1>Support Ànúrà</h1>
-        <p class="subtext">
-            Your support helps Ànúrà continue providing opportunities, resources, and programs that empower girls to explore and thrive in STEAM across Nigeria.
-        </p>
-    </section>
-
-    <div class="donate-container">
-
-        <div class="donate-section reveal-on-scroll">
-            <h2>Why Your Support Matters</h2>
-            <p>Every contribution directly impacts our ability to create learning experiences, provide safe transportation, and fund intensive workshops. Here is exactly what your support helps us achieve:</p>
-        </div>
-
-        <div class="impact-list reveal-on-scroll">
-            <div class="impact-item">
-                <div class="impact-number">₦10k</div>
-                <div class="impact-text">
-                    <h3>Learning Kits</h3>
-                    <p>Provides a beginner-friendly learning guide, digital resources, and a customized STEAM kit for one girl.</p>
-                </div>
-            </div>
-            <div class="impact-item">
-                <div class="impact-number">₦50k</div>
-                <div class="impact-text">
-                    <h3>Transport Support</h3>
-                    <p>Covers logistics and safe transportation for girls from underserved communities to attend our in-person workshops.</p>
-                </div>
-            </div>
-            <div class="impact-item">
-                <div class="impact-number">₦100k+</div>
-                <div class="impact-text">
-                    <h3>Workshop Sponsorship</h3>
-                    <p>Directly funds a quarterly touchpoint or summer workshop, providing venue, internet, and mentorship resources.</p>
-                </div>
-            </div>
-        </div>
-
-        <section class="reveal-on-scroll" style="margin: 5rem 0;">
-            <h2 style="font-size: 2.2rem; margin-bottom: 1rem; color: var(--text-dark); text-align: center;">Make a Direct Transfer</h2>
-            <p style="color: var(--text-light); text-align: center; margin-bottom: 3rem; max-width: 600px; margin-left: auto; margin-right: auto;">
-                To avoid third-party fees and ensure 100% of your donation goes directly toward our mission, we accept direct bank transfers to our dedicated initiative account.
-            </p>
-
-            <div class="bank-card">
-                <p style="color: var(--text-light); font-size: 1.1rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 600;">Bank Name</p>
-                <h3 style="font-size: 1.5rem; margin-bottom: 2rem;">[Insert Bank Name]</h3>
-                
-                <p style="color: var(--text-light); font-size: 1.1rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 600;">Account Number</p>
-                <div class="account-number">0123456789</div>
-                
-                <p style="color: var(--text-light); font-size: 1.1rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 600; margin-top: 2rem;">Account Name</p>
-                <h3 style="font-size: 1.5rem;">Ànúrà Initiative</h3>
-            </div>
-
-            <p style="text-align: center; margin-top: 2rem; color: var(--text-light); font-size: 0.95rem;">
-                <em>* Kindly send a receipt or notification to <strong>info.anura@gmail.com</strong> after your transfer so we can properly acknowledge your generous support!</em>
+    <main>
+        <section class="hero glass-panel hero-container">
+            <h1>Support Ànúrà</h1>
+            <p class="subtext">
+                Your support helps Ànúrà continue providing opportunities, resources, and programs that empower girls to explore and thrive in STEAM across Nigeria.
             </p>
         </section>
 
-        <div class="donate-section reveal-on-scroll">
-            <h2>Other Ways to Support</h2>
-            <p>Can't donate right now? There are other ways you can support Ànúrà:</p>
-            <ul style="margin-left: 2rem; color: var(--text-light); line-height: 1.8;">
-                <li><strong>Volunteer:</strong> Contribute your time and skills to help strengthen our initiatives</li>
-                <li><strong>Partner:</strong> Collaborate with us to expand opportunities for girls in STEAM</li>
-                <li><strong>Share:</strong> Help spread the word about Ànúrà in your community</li>
-                <li><strong>Mentor:</strong> Guide and support a girl exploring STEAM</li>
-            </ul>
+        <div class="donate-container">
+
+            <div class="donate-section reveal-on-scroll">
+                <h2>Why Your Support Matters</h2>
+                <p>Every contribution directly impacts our ability to create learning experiences, provide safe transportation, and fund intensive workshops. Here is exactly what your support helps us achieve:</p>
+            </div>
+
+            <div class="impact-list reveal-on-scroll">
+                <div class="impact-item">
+                    <div class="impact-number">₦10k</div>
+                    <div class="impact-text">
+                        <h3>Learning Kits</h3>
+                        <p>Provides a beginner-friendly learning guide, digital resources, and a customized STEAM kit for one girl.</p>
+                    </div>
+                </div>
+                <div class="impact-item">
+                    <div class="impact-number">₦50k</div>
+                    <div class="impact-text">
+                        <h3>Transport Support</h3>
+                        <p>Covers logistics and safe transportation for girls from underserved communities to attend our in-person workshops.</p>
+                    </div>
+                </div>
+                <div class="impact-item">
+                    <div class="impact-number">₦100k+</div>
+                    <div class="impact-text">
+                        <h3>Workshop Sponsorship</h3>
+                        <p>Directly funds a quarterly touchpoint or summer workshop, providing venue, internet, and mentorship resources.</p>
+                    </div>
+                </div>
+            </div>
+
+            <section class="reveal-on-scroll" style="margin: 5rem 0;">
+                <h2 style="font-size: 2.2rem; margin-bottom: 1rem; color: var(--text-dark); text-align: center;">Make a Direct Transfer</h2>
+                <p style="color: var(--text-light); text-align: center; margin-bottom: 3rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                    To avoid third-party fees and ensure 100% of your donation goes directly toward our mission, we accept direct bank transfers to our dedicated initiative account.
+                </p>
+
+                <div class="bank-card">
+                    <p style="color: var(--text-light); font-size: 1.1rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 600;">Bank Name</p>
+                    <h3 style="font-size: 1.5rem; margin-bottom: 2rem;">[Insert Bank Name]</h3>
+                    
+                    <p style="color: var(--text-light); font-size: 1.1rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 600;">Account Number</p>
+                    <div class="account-number">0123456789</div>
+                    
+                    <p style="color: var(--text-light); font-size: 1.1rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 600; margin-top: 2rem;">Account Name</p>
+                    <h3 style="font-size: 1.5rem;">Ànúrà Initiative</h3>
+                </div>
+
+                <p style="text-align: center; margin-top: 2rem; color: var(--text-light); font-size: 0.95rem;">
+                    <em>* Kindly send a receipt or notification to <strong>info.anura@gmail.com</strong> after your transfer so we can properly acknowledge your generous support!</em>
+                </p>
+            </section>
+
+            <div class="donate-section reveal-on-scroll">
+                <h2>Other Ways to Support</h2>
+                <p>Can't donate right now? There are other ways you can support Ànúrà:</p>
+                <ul style="margin-left: 2rem; color: var(--text-light); line-height: 1.8;">
+                    <li><strong>Volunteer:</strong> Contribute your time and skills to help strengthen our initiatives</li>
+                    <li><strong>Partner:</strong> Collaborate with us to expand opportunities for girls in STEAM</li>
+                    <li><strong>Share:</strong> Help spread the word about Ànúrà in your community</li>
+                    <li><strong>Mentor:</strong> Guide and support a girl exploring STEAM</li>
+                </ul>
+            </div>
+
         </div>
 
-    </div>
+        <div style="text-align: center;">
+            <a href="anu.html" class="back-link">← Back to Home</a>
+        </div>
 
-    <div style="text-align: center;">
-        <a href="anu.html" class="back-link">← Back to Home</a>
-    </div>
+    </main>
 
-</main>
+    <footer class="glass-footer">
+        <div class="footer-content">
+            <a href="anu.html" style="text-decoration: none;" class="footer-logo-link">
+                <img src="Ànúrà (Logo).png" alt="ÀNÚRÀ Logo" style="height: 40px; width: auto;">
+            </a>
+            <ul class="footer-links">
+                <li><a href="about.html">About</a></li>
+                <li><a href="programs.html">Programs</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Ànúrà Initiative. All rights reserved.</p>
+        </div>
+    </footer>
 
-<footer class="glass-footer">
-    <div class="footer-content">
-        <a href="anu.html" style="text-decoration: none;" class="footer-logo-link">
-            <img src="Ànúrà (Logo).png" alt="ÀNÚRÀ Logo" style="height: 40px; width: auto;">
-        </a>
-        <ul class="footer-links">
-            <li><a href="about.html">About</a></li>
-            <li><a href="programs.html">Programs</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </div>
-    <div class="footer-bottom">
-        <p>© 2026 Ànúrà Initiative. All rights reserved.</p>
-    </div>
-</footer>
+    <script src="animations.js"></script>
 
-<script src="animations.js"></script>
-
-    </body>
+</body>
 </html>
