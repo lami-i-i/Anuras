@@ -86,7 +86,7 @@
 
             <div class="impact-list">
                 <div class="impact-item">
-                    <div class="impact-number">₦10k</div>
+                    <div class="impact-number">₦20k</div>
                     <div class="impact-text">
                         <h3>Learning Kits</h3>
                         <p>Provides a beginner-friendly learning guide, digital resources, and a customized STEAM kit for one girl.</p>
@@ -108,28 +108,24 @@
                 </div>
             </div>
 
-            <section style="margin: 5rem 0;">
-                <h2 style="font-size: 2.2rem; margin-bottom: 1rem; color: var(--text-dark); text-align: center;">Make a Direct Transfer</h2>
-                <p style="color: var(--text-light); text-align: center; margin-bottom: 3rem; max-width: 600px; margin-left: auto; margin-right: auto;">
-                    To avoid third-party fees and ensure 100% of your donation goes directly toward our mission, we accept direct bank transfers to our dedicated initiative account.
-                </p>
 
-                <div class="bank-card">
-                    <p style="color: var(--text-light); font-size: 1.1rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 600;">Bank Name</p>
-                    <h3 style="font-size: 1.5rem; margin-bottom: 2rem;">[Insert Bank Name]</h3>
-                    
-                    <p style="color: var(--text-light); font-size: 1.1rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 600;">Account Number</p>
-                    <div class="account-number">0123456789</div>
-                    
-                    <p style="color: var(--text-light); font-size: 1.1rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 600; margin-top: 2rem;">Account Name</p>
-                    <h3 style="font-size: 1.5rem;">Ànúrà Initiative</h3>
+
+                   <div class="form-side">
+                    <form id="anuraContactForm" action="https://formspree.io/f/xykvwopa" method="POST">
+                        <label>
+                            Your email
+                            <input type="email" name="email" required>
+                        </label>
+                        <label>
+                            Your message/I'd like to donate to Ànúrà
+                            <textarea name="message" required></textarea>
+                        </label>
+                        <button type="submit" class="btn-submit">Send Message</button>
+                        <div id="formSuccess" class="success-message">Thanks for reaching out! We will get back to you soon.</div>
+                    </form>
                 </div>
 
-                <p style="text-align: center; margin-top: 2rem; color: var(--text-light); font-size: 0.95rem;">
-                    <em>* Kindly send a receipt or notification to <strong>info.anura@gmail.com</strong> after your transfer so we can properly acknowledge your generous support!</em>
-                </p>
-            </section>
-        </div>
+                
 
         <div style="text-align: center;">
             <a href="anu.html" class="back-link">← Back to Home</a>
