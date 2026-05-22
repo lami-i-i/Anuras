@@ -22,11 +22,13 @@
 /* Reset all default margins, padding, and set border-box sizing for consistency */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
+/* Responsive layout scaling and smooth scrolling */
 html {
     scroll-behavior: smooth;
     /* Automatically scales layout down slightly on smaller displays */
     font-size: clamp(14px, 0.95vw, 16px);
 }
+
 /* Base body styles */
 body {
     background-color: var(--bg-base);
@@ -149,14 +151,15 @@ main > section {
 /* ========================================
    DYNAMIC INTERCONNECTED BACKGROUND
    ======================================== */
+/* Container for the interactive particles canvas */
 #canvas-container {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    z-index: -1;
-    pointer-events: none;
+    z-index: -1; /* Stays behind all page content */
+    pointer-events: none; /* Doesn't interfere with user interactions */
 }
 
 /* ========================================
@@ -228,9 +231,9 @@ main > section {
    ======================================== */
 /* Main navigation header - sticky positioning keeps it visible while scrolling */
 .glass-nav {
-    display: flex; /* Flexbox layout for horizontal arrangement */
-    justify-content: space-between; /* Space out nav items */
-    align-items: center; /* Vertically center all items */
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
     padding: 1.2rem 5%; /* Padding for breathing room */
     position: sticky; /* Stays at top while scrolling */
     top: 0;
@@ -586,6 +589,40 @@ main > section {
 /* ========================================
    INTERACTIVE EFFECTS
    ======================================== */
+/* Interactive hover for photos */
+.hover-photo-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 24px;
+    cursor: pointer;
+    display: block; /* For anchor tags */
+}
+
+.hover-photo-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    display: block;
+}
+
+.hover-photo-container:hover img {
+    transform: scale(1.04);
+}
+
+/* Scroll-up reveal animations */
+.reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+                transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.reveal-on-scroll.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 /* Ripple effect - creates circular ripple animation on element click */
 .ripple {
     position: absolute;
@@ -812,6 +849,9 @@ img {
    ======================================== */
 /* Breakpoint: 768px (tablets and smaller screens) */
 @media (max-width: 768px) {
+    /* Auto scale text down */
+    html { font-size: 14px; }
+
     /* Change split section to single column layout */
     .split-section { grid-template-columns: 1fr; }
 
