@@ -22,6 +22,11 @@
 /* Reset all default margins, padding, and set border-box sizing for consistency */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
+html {
+    scroll-behavior: smooth;
+    /* Automatically scales layout down slightly on smaller displays */
+    font-size: clamp(14px, 0.95vw, 16px);
+}
 /* Base body styles */
 body {
     background-color: var(--bg-base);
