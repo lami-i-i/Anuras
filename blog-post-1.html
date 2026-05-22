@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Intersection of Creativity & Technology | Ànúrà</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .post-container { max-width: 800px; margin: 4rem auto; padding: 0 5%; }
+        .post-content { line-height: 1.9; color: var(--text-dark); }
+        .post-content h2 { font-size: 1.8rem; color: var(--primary-purple); margin: 3rem 0 1.5rem 0; font-weight: 700; }
+        .post-content h3 { font-size: 1.4rem; color: var(--primary-purple); margin: 2.5rem 0 1rem 0; font-weight: 700; }
+        .post-content p { font-size: 1.05rem; margin-bottom: 1.5rem; }
+        .post-content ul, .post-content ol { margin: 1.5rem 0 1.5rem 2rem; }
+        .post-content li { margin-bottom: 0.8rem; font-size: 1.05rem; }
+        .post-content strong { color: var(--primary-purple); font-weight: 600; }
+
+        .post-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2rem;
+            background: var(--glass-bg);
+            backdrop-filter: blur(16px);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .meta-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+        }
+
+        .meta-label { font-size: 0.8rem; color: var(--text-light); text-transform: uppercase; font-weight: 600; }
+        .meta-value { font-size: 1.1rem; color: var(--primary-purple); font-weight: 600; }
+        .read-time { font-size: 1rem; color: var(--text-light); }
+
+        .post-divider {
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary-purple), transparent);
+            margin: 3rem 0;
+        }
+
+        .highlight-box {
+            background: rgba(192, 124, 212, 0.1);
+            border-left: 4px solid var(--primary-purple);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+            font-size: 1.05rem;
+            font-style: italic;
+        }
+
+        .author-section {
+            margin-top: 4rem;
+            padding: 2rem;
+            background: var(--glass-bg);
+            backdrop-filter: blur(16px);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            display: flex;
+            gap: 2rem;
+            align-items: flex-start;
+        }
+
+        .author-avatar {
+            font-size: 3rem;
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary-purple), #9476a6);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            box-shadow: 0 8px 20px rgba(192, 124, 212, 0.25);
+        }
+
+        .author-info h4 { color: var(--primary-purple); font-size: 1.2rem; margin-bottom: 0.3rem; }
+        .author-title { color: var(--text-light); font-size: 0.9rem; margin-bottom: 0.8rem; }
+        .author-bio { color: var(--text-light); line-height: 1.7; }
+
+        .back-link { display: inline-block; margin: 2rem 0; color: var(--primary-purple); text-decoration: none; font-weight: 600; }
+        .back-link:hover { text-decoration: underline; }
+
+        .discussion-section {
+            margin-top: 4rem;
+            padding: 2.5rem;
+            border-radius: 24px;
+            background: linear-gradient(135deg, rgba(192, 124, 212, 0.1), rgba(192, 124, 212, 0.05));
+            border: 1px solid var(--glass-border);
+            text-align: center;
+        }
+
+        .discussion-section h3 {
+            color: var(--primary-purple);
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+        }
+
+        .discussion-section p {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+        }
+
+        .discussion-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .discussion-link-item {
+            padding: 1.5rem;
+            border-radius: 12px;
+            background: rgba(192, 124, 212, 0.08);
+            border: 1px solid var(--glass-border);
+            text-decoration: none;
+            color: var(--primary-purple);
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .discussion-link-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(192, 124, 212, 0.15);
+            background: rgba(192, 124, 212, 0.15);
+        }
+
+        @media (max-width: 768px) {
+            .post-container { margin: 2rem auto; }
+            .post-meta { flex-direction: column; align-items: flex-start; }
+            .author-section { flex-direction: column; text-align: center; }
+            .author-avatar { margin: 0 auto; }
+            .discussion-section { padding: 1.5rem; }
+            .discussion-links { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+
+    <header class="glass-nav">
+        <a href="anu.html" class="logo" style="text-decoration: none; display: flex; align-items: center;">
+          <img src="Ànúrà (Logo).png" alt="ÀNÚRÀ Logo" style="height: 40px; width: auto;">
+        </a>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="anu.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="programs.html">Programs</a></li>
+          
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <a href="contact.html" class="btn-primary nav-btn">Join Community</a>
+    </header>
+
+    <main>
+        <section class="image-hero-section" style="margin: 2rem 5%; border-radius: 32px;">
+            <div class="image-hero-content">
+                <h1 style="color: #1a1a1a; text-shadow: none; font-size: 2.8rem;">The Intersection of Creativity & Technology</h1>
+                <p class="subtext" style="color: #4a4a4a; text-shadow: none;">
+                    Why creative thinking isn't optional in tech—it's essential. A reflection on innovation, self-expression, and breaking through the intimidation barrier.
+                </p>
+            </div>
+        </section>
+
+        <div class="post-container">
+            <div class="post-meta">
+                <div class="meta-item">
+                    <span class="meta-label">Author</span>
+                    <span class="meta-value">Olamide Fatunase</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Published</span>
+                    <span class="meta-value">Mar 15, 2026</span>
+                </div>
+                <div class="meta-item">
+                    <span class="read-time">📖 5 min read</span>
+                </div>
+            </div>
+
+            <div class="post-content">
+                <p>
+                    When I first started learning to code at 16, I thought I had to choose: I could be the creative one or the technical one. Not both. The girls I've mentored over the years tell me the same thing. Tech feels like a world reserved for people who think in ones and zeros, not metaphors and emotions. But this couldn't be further from the truth.
+                </p>
+
+                <p>
+                    <strong>The best technology comes from creativity.</strong> Think about it—the design of the apps you use every day, the user experiences that feel intuitive and beautiful, the solutions that actually solve real problems in unexpected ways. None of that came from pure logic. It came from people who were brave enough to combine what they loved with what they were building.
+                </p>
+
+                <div class="highlight-box">
+                    "Coding is not just about following rules. It's about imagining something that doesn't exist and bringing it to life."
+                </div>
+
+                <h2>Where Does the Fear Come From?</h2>
+                <p>
+                    I think the disconnect happens because tech culture has historically (and loudly) centered a specific type of thinking and identity. The "hacker," the "genius programmer," the person who lives for algorithms. And while those people absolutely exist and do amazing work, they're not the only path forward.
+                </p>
+
+                <p>
+                    For girls growing up, especially in Africa where we're already navigating limited access to tech education, the intimidation factor multiplies. We see tech spaces as exclusive, masculine, intimidating. We internalize the message that if we're not naturally good at math by age 10, we're not "tech people."
+                </p>
+
+                <p>
+                    But here's what I've learned through Ànúrà: <strong>creativity is often the gateway.</strong> I've seen girls who said they couldn't code suddenly get excited when we framed it as "building your own world." I've watched them light up when they realized they could use design skills to create interfaces, or storytelling skills to structure user experiences.
+                </p>
+
+                <h2>Why Creativity Matters in Tech</h2>
+                <p>
+                    Let me be specific about what I mean. Creativity in tech shows up as:
+                </p>
+                <ul>
+                    <li><strong>Problem-solving with empathy:</strong> Understanding not just what to build, but who you're building for and why their needs matter</li>
+                    <li><strong>Design thinking:</strong> Approaching technical challenges with an artist's eye for aesthetics and user experience</li>
+                    <li><strong>Innovative solutions:</strong> The willingness to question "how we've always done it" and imagine new approaches</li>
+                    <li><strong>Communication:</strong> Explaining complex technical ideas in ways that inspire and connect with people</li>
+                    <li><strong>Interdisciplinary thinking:</strong> Pulling ideas from art, psychology, biology, and other fields to inform technical work</li>
+                </ul>
+
+                <p>
+                    The tech industry is increasingly recognizing this. Companies are hiring for "creative technologists," building diverse teams, and realizing that innovation happens at the intersection of different perspectives and skill sets. The future of tech isn't about code alone—it's about what you can imagine, express, and build together.
+                </p>
+
+                <h2>What This Means for You</h2>
+                <p>
+                    If you're a girl who loves art, writing, design, music, storytelling, or any form of creative expression—tech needs you. Not as an afterthought. Not as someone who has to suppress who you are to fit in. But as someone whose unique perspective and creative thinking are exactly what this industry needs.
+                </p>
+
+                <p>
+                    You don't need to be "naturally gifted" at math or have been coding since you were five. You need curiosity, courage, and the willingness to learn. You need to know that your creativity is not in opposition to technology—it's the secret sauce that makes technology matter.
+                </p>
+
+                <div class="post-divider"></div>
+
+                <p>
+                    At Ànúrà, we're building a space where this intersection is celebrated. Where you can bring your whole self—your creativity, your curiosity, your voice—and know that you belong. Because the future of STEAM isn't built by people who choose between creativity and technology. It's built by people bold enough to claim both.
+                </p>
+
+                <p style="margin-top: 2rem; font-size: 0.95rem; color: var(--text-light); font-style: italic;">
+                    What's your intersection? How do you see your creative talents connecting with the possibilities of technology? Share your story with us at Ànúrà.
+                </p>
+            </div>
+
+            <div class="author-section">
+                <div class="author-avatar">OL</div>
+                <div class="author-info">
+                    <h4>Olamide Fatunase</h4>
+                    <p class="author-title">Cofounder & Director, Ànúrà Initiative</p>
+                    <p class="author-bio">
+                        Olamide is passionate about creating accessible pathways for African girls to explore STEAM. Through Ànúrà, she's building communities that celebrate creativity, curiosity, and the intersection of multiple disciplines.
+                    </p>
+                </div>
+            </div>
+
+            <div class="discussion-section">
+                <h3>What do you think?</h3>
+                <p>Loved this essay? Have your own story about creativity in tech? Connect with our community to discuss ideas and share your journey.</p>
+                <div class="discussion-links">
+                    <a href="#" class="discussion-link-item">WhatsApp Group</a>
+                    <a href="contact.html" class="discussion-link-item">✉️ Email Us</a>
+                    <a href="blog.html" class="discussion-link-item">📝 More Essays</a>
+                </div>
+            </div>
+
+            <a href="blog.html" class="back-link">← Back to Essays</a>
+        </div>
+
+    </main>
+
+    <footer class="glass-footer">
+        <div class="footer-content">
+            <a href="anu.html" style="text-decoration: none;" class="footer-logo-link">\n                <img src="Ànúrà (Logo).png" alt="ÀNÚRÀ Logo" style="height: 40px; width: auto;">\n            </a>
+            <ul class="footer-links">
+                <li><a href="about.html">About</a></li>
+                <li><a href="programs.html">Programs</a></li>
+        
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Ànúrà Initiative. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="animations.js"></script>
+</body>
+</html>

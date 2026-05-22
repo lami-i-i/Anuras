@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impact | Ànúrà</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .impact-container { max-width: 1200px; margin: 4rem auto; padding: 0 5%; }
+        .impact-intro { text-align: center; margin-bottom: 4rem; }
+        .impact-intro p { font-size: 1.1rem; color: var(--text-light); line-height: 1.8; max-width: 700px; margin: 0 auto; }
+        .impact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.5rem; margin-bottom: 4rem; }
+        .impact-card { padding: 2.5rem; border-radius: 24px; background: var(--glass-bg); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid var(--glass-border); box-shadow: var(--glass-shadow); transition: transform 0.3s ease; }
+        .impact-card:hover { transform: translateY(-4px); }
+        .impact-card h3 { font-size: 1.5rem; color: var(--primary-purple); margin-bottom: 1rem; }
+        .impact-card p { color: var(--text-light); line-height: 1.8; }
+        .stat-number { font-size: 2.5rem; font-weight: 700; color: var(--primary-purple); margin-bottom: 0.5rem; }
+        .back-link { display: inline-block; margin: 2rem 0; color: var(--primary-purple); text-decoration: none; font-weight: 600; }
+        .back-link:hover { text-decoration: underline; }
+        .partner-logo { transition: all 0.3s ease; transform: scale(1); }
+        .partner-logo:hover { transform: scale(1.1); filter: drop-shadow(0 8px 16px rgba(168, 146, 184, 0.3)); }
+    </style>
+</head>
+<body>
+
+    <div class="bg-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+
+    <header class="glass-nav">
+        <a href="anu.html" class="logo" style="text-decoration: none; display: flex; align-items: center;">
+         <img src="Ànúrà (Logo).png" alt="ÀNÚRÀ Logo" style="height: 40px; width: auto;">
+        </a>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="anu.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="programs.html">Programs</a></li>
+        
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <a href="contact.html" class="btn-primary nav-btn">Join Community</a>
+    </header>
+
+    <main>
+        <section class="hero glass-panel hero-container">
+            <h1>Our Impact</h1>
+            <p class="subtext">
+                Ànúrà is committed to creating meaningful opportunities that encourage girls to explore creativity, technology, and innovation.
+            </p>
+        </section>
+
+        <div class="impact-container">
+
+            <div class="impact-intro">
+                <h2 style="font-size: 2.6rem; color: var(--primary-purple); margin-bottom: 2rem; text-align: center;font-family: bigcalson;">Founded in 2023</h2>
+            </div>
+
+     
+            <div class="impact-grid">
+
+                <div class="impact-card">
+                    <h3> August 2024 STEM Hackathon</h3>
+                    <p><strong>18 girls</strong> participated in our first major outreach event, a one-day STEM hackathon held in Lagos. Girls collaborated in teams to develop technological solutions to real-world problems. Winning team "Team Ruby" received ₦50,000 prize for their innovative project. All participants received Certificates of Participation and valuable STEM exposure.</p>
+                </div>
+
+                <div class="impact-card">
+                    <h3> 2025 Virtual Summer Program</h3>
+                    <p>We expanded our reach through a two-week virtual learning experience where girls explored digital design, animation, and STEM fundamentals. Sessions ran three times weekly through interactive workshops and collaborative projects. Guest speaker shared insights on STEM careers and personal growth to inspire participants.</p>
+                </div>
+
+                <div class="impact-card">
+                    <h3>Resource Library</h3>
+                    <p>We've built a comprehensive library of beginner-friendly guides and resources across 5 STEAM tracks (Science, Technology, Engineering, Arts, Mathematics). These self-paced learning materials make STEM accessible to girls regardless of their location or background.</p>
+                </div>
+
+            </div>
+
+            <!-- Partnership Section -->
+            <section style="margin: 4rem 0; padding: 3rem; border-radius: 24px; background: linear-gradient(135deg, rgba(168, 146, 184, 0.15), rgba(212, 197, 224, 0.1)); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid var(--glass-border); box-shadow: var(--glass-shadow);">
+                <h3 style="font-size: 1.8rem; color: var(--primary-purple); margin-bottom: 2rem; text-align: center;">Our Partners</h3>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; align-items: center;">
+
+    
+
+                    <div style="text-align: center; transition: all 0.3s ease;">
+                        <a href="https://thebloomafrica.org" target="_blank" rel="noopener noreferrer" style="text-decoration: none; display: inline-block; transition: transform 0.3s ease;">
+                            <img src="BLOOM_Logo_PNG (5).png" alt="The Bloom Africa logo" class="partner-logo" style="width: 80px; height: auto; display: block; margin: 0 auto 1rem;">
+                        </a>
+                        <h4 style="color: var(--primary-purple); margin: 0; font-size: 1.1rem;">The Bloom Africa</h4>
+                        <p style="color: var(--text-light); line-height: 1.6; font-size: 0.85rem; margin-top: 0.5rem;"> Operational & Financial support for our programs</p>
+                    </div>
+
+                    <div style="text-align: center; transition: all 0.3s ease;">
+                        <a href="https://www.instagram.com/bloominstem.ng?igsh=MW51NDNnMDM3am9qYw=="  target="_blank" rel="noopener noreferrer" style="text-decoration: none; display: inline-block; transition: transform 0.3s ease;">
+                            <img src="Bloom in STEM 2.png" alt="Bloom In STEM Logo" class="partner-logo" style="width: 150px; height: auto; display: block; margin: 0 auto 1rem;">
+                        </a>
+                        <h4 style="color: var(--primary-purple); margin: 0; font-size: 1.1rem;">Bloom In Stem</h4>
+                        <p style="color: var(--text-light); line-height: 1.6; font-size: 0.85rem; margin-top: 0.5rem;">Community partner & advocacy collaborator</p>
+                    </div>
+
+                </div>
+            </section>
+
+
+            <section style="margin-top: 5rem; padding: 3rem; border-radius: 24px; background: var(--glass-bg); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid var(--glass-border); box-shadow: var(--glass-shadow);">
+                <h2 style="font-size: 2rem; margin-bottom: 3rem; text-align: center; color: var(--primary-purple);">Why Ànúrà Matters</h2>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
+                    <div>
+                        <h4 style="color: var(--primary-purple); margin-bottom: 1rem; font-size: 1.1rem;">Building Confidence</h4>
+                        <p style="color: var(--text-light); line-height: 1.8;">We create spaces where girls feel safe to learn, experiment, and make mistakes—essential for building the confidence needed to thrive in STEAM fields.</p>
+                    </div>
+                    <div>
+                        <h4 style="color: var(--primary-purple); margin-bottom: 1rem; font-size: 1.1rem;">Reducing Barriers</h4>
+                        <p style="color: var(--text-light); line-height: 1.8;">By making STEAM accessible, affordable, and welcoming, we reduce the barriers that often prevent girls from exploring these fields.</p>
+                    </div>
+                    <div>
+                        <h4 style="color: var(--primary-purple); margin-bottom: 1rem; font-size: 1.1rem;">Creating Community</h4>
+                        <p style="color: var(--text-light); line-height: 1.8;">A supportive community of peers is essential. We connect girls with others who share their interests, creating lasting friendships and networks.</p>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+        <a href="anu.html" class="back-link">← Back to Home</a>
+
+    </main>
+
+   <footer class="glass-footer">
+        <div class="footer-content">
+            <a href="anu.html" style="text-decoration: none;" class="footer-logo-link">
+                            <img src="Ànúrà (Logo).png" alt="ÀNÚRÀ Logo" style="height: 40px; width: auto;">
+                                  </a>
+            <ul class="footer-links">
+                <li><a href="about.html">About</a></li>
+                <li><a href="programs.html">Programs</a></li>
+         
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Ànúrà Initiative. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="animations.js"></script>
+</body>
+</html>

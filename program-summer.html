@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026 STEAM Challenge | Ànúrà</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        .hero-clean { max-width: 900px; margin: 6rem auto 4rem; padding: 2rem 5%; text-align: center; }
+        .hero-clean h1 { font-size: 3.2rem; line-height: 1.2; margin-bottom: 1.5rem; color: var(--text-dark); letter-spacing: -1px; }
+        .hero-clean .subtext { font-size: 1.15rem; color: var(--text-light); max-width: 700px; margin: 0 auto 2.5rem; line-height: 1.7; }
+        
+        .detail-container { max-width: 1000px; margin: 0 auto 6rem; padding: 0 5%; }
+        .detail-section { margin-bottom: 4rem; }
+        .detail-section h2 { font-size: 2rem; color: var(--text-dark); margin-bottom: 1.5rem; letter-spacing: -0.5px; }
+        .detail-section p { font-size: 1.05rem; color: var(--text-light); line-height: 1.8; margin-bottom: 1.5rem; }
+        
+        /* Main Event Highlight Box */
+        .highlight-card { padding: 3rem; border-radius: 24px; background: linear-gradient(135deg, rgba(255,255,255,0.8), rgba(255,255,255,0.4)); backdrop-filter: blur(20px); border: 1px solid var(--primary-purple); box-shadow: 0 20px 40px rgba(181, 164, 196, 0.15); margin-bottom: 4rem; }
+        .highlight-card h3 { font-size: 1.8rem; color: var(--text-dark); margin-bottom: 1rem; }
+        
+        /* Cleaned up Stat Display */
+        .stat-display { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 2rem; margin: 2.5rem 0; }
+        .stat-box { text-align: center; padding: 2rem 1.5rem; border-radius: 20px; background: rgba(181, 164, 196, 0.15); border: 1px solid rgba(181, 164, 196, 0.3); }
+        .stat-big { font-size: 2.5rem; font-weight: 700; color: var(--primary-purple); margin-bottom: 0.5rem; font-family: 'Outfit', sans-serif; }
+        
+        /* Feature List Styling */
+        .feature-list { list-style: none; margin: 2rem 0; display: grid; grid-template-columns: 1fr; gap: 1rem; }
+        .feature-list li { padding: 1.5rem; background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 16px; color: var(--text-dark); display: flex; align-items: flex-start; gap: 1rem; }
+        .feature-list li strong { color: var(--primary-purple); display: block; margin-bottom: 0.3rem; font-family: 'Outfit', sans-serif; font-size: 1.1rem; }
+        
+        /* Past Events Grid */
+        .past-events-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem; }
+        .past-event-card { padding: 2.5rem; border-radius: 24px; background: var(--glass-bg); border: 1px solid var(--glass-border); transition: transform 0.3s ease; }
+        .past-event-card:hover { transform: translateY(-5px); box-shadow: var(--glass-shadow); }
+        .past-event-card h4 { color: var(--primary-purple); font-size: 1.3rem; margin-bottom: 1rem; }
+        
+        .back-link { display: inline-block; margin-top: 2rem; color: var(--text-light); text-decoration: none; font-weight: 500; transition: color 0.3s; }
+        .back-link:hover { color: var(--primary-purple); }
+    </style>
+</head>
+<body>
+
+    <div class="bg-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+
+    <header class="glass-nav">
+        <a href="anu.html" class="logo" style="text-decoration: none; display: flex; align-items: center;">
+           <img src="Ànúrà (Logo).png" alt="ÀNÚRÀ Logo" style="height: 40px; width: auto;">
+        </a>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="anu.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="programs.html">Programs</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <a href="contact.html" class="btn-primary nav-btn">Join Community</a>
+    </header>
+
+    <main>
+        <section class="hero-clean">
+            <h1>Build Your World: 2026 STEAM Challenge</h1>
+            <p class="subtext">
+                An intensive, immersive summer program designed to give girls deep exposure to out-of-this-world technology and real-world problem-solving.
+            </p>
+        </section>
+
+        <div class="detail-container">
+
+            <div class="highlight-card">
+                <div style="display: inline-block; background: var(--text-dark); color: white; padding: 0.4rem 1rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 1.5rem;">Upcoming Event</div>
+                <h3>The SpacePoint Partnership</h3>
+                <p>This July and August, Ànúrà is bringing aerospace technology directly to Lagos. In an exciting partnership with SpacePoint, we are introducing a unique curriculum based on real satellite technology.</p>
+                <p>Designed for girls aged 11–18, this challenge will utilize specialized challenge cards to teach hands-on, satellite-related tasks, proving that the sky is not the limit—it's just the beginning.</p>
+                
+                <div class="stat-display">
+                    <div class="stat-box">
+                        <div class="stat-big">Jul-Aug</div>
+                        <p style="color: var(--text-light); font-weight: 500;">2026 Timeline</p>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-big">Lagos</div>
+                        <p style="color: var(--text-light); font-weight: 500;">Location</p>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-big">30-50</div>
+                        <p style="color: var(--text-light); font-weight: 500;">Girls Expected</p>
+                    </div>
+                </div>
+
+                <a href="contact.html" class="btn-primary" style="margin-top: 1rem;">Join the Waitlist</a>
+            </div>
+
+            <div class="detail-section">
+                <h2>What You'll Experience</h2>
+                <ul class="feature-list">
+                    <li>
+                        <div>
+                            <strong>Guided Tech Workshops</strong>
+                            <span style="color: var(--text-light);">Expert facilitators walk you through advanced STEM concepts and creative techniques step-by-step.</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <strong>Satellite & Aerospace Curriculum</strong>
+                            <span style="color: var(--text-light);">Engage directly with SpacePoint's challenge cards to learn how real satellite technology operates and solves global problems.</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <strong>Project Collaboration</strong>
+                            <span style="color: var(--text-light);">Work in teams to design, build, and present solutions, simulating what real innovation labs and tech companies do.</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <strong>Mentorship Opportunities</strong>
+                            <span style="color: var(--text-light);">Connect with women working in STEM fields who will share their experiences, provide feedback on your projects, and offer career advice.</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="detail-section" style="margin-top: 6rem;">
+                <h2>Our Previous Impact</h2>
+                <p>We've been building this community year by year. Here is a look at what we achieved in our previous summer programs.</p>
+                
+                <div class="past-events-grid">
+                    <div class="past-event-card">
+                        <h4>2025 Virtual Program</h4>
+                        <p style="color: var(--text-light); font-size: 0.95rem; margin-bottom: 1.5rem;">A massive 2-week digital intensive featuring interactive virtual workshops, digital design, animation, and STEM fundamentals. Guest speaker Ntýam Princia joined to guide the girls on personal growth and STEM opportunities.</p>
+                        <ul style="list-style: none; padding: 0; color: var(--text-dark); font-size: 0.9rem;">
+                            <li style="margin-bottom: 0.5rem;">✓ 3x Weekly Sessions</li>
+                            <li style="margin-bottom: 0.5rem;">✓ Final showcase presentations</li>
+                            <li>✓ Cross-continental networking</li>
+                        </ul>
+                    </div>
+
+                    <div class="past-event-card">
+                        <h4>2024 STEM Hackathon</h4>
+                        <p style="color: var(--text-light); font-size: 0.95rem; margin-bottom: 1.5rem;">Our inaugural in-person event at Slum2School in Lagos. 18 girls formed teams to develop technological solutions. Team Ruby took home the grand prize of ₦50,000 for their innovative project.</p>
+                        <ul style="list-style: none; padding: 0; color: var(--text-dark); font-size: 0.9rem;">
+                            <li style="margin-bottom: 0.5rem;">✓ Keynote by Ms. Lola Aworanti-Ekugo</li>
+                            <li style="margin-bottom: 0.5rem;">✓ Supported by The Bloom Africa</li>
+                            <li>✓ Hands-on creative challenges</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div style="text-align: center; margin-bottom: 4rem;">
+            <a href="programs.html" class="back-link">&larr; Back to All Programs</a>
+        </div>
+    </main>
+
+     <footer class="glass-footer">
+        <div class="footer-content">
+            <a href="anu.html" style="text-decoration: none;" class="footer-logo-link">
+                            <img src="Ànúrà (Logo).png" alt="ÀNÚRÀ Logo" style="height: 40px; width: auto;">
+                                  </a>
+            <ul class="footer-links">
+                <li><a href="about.html">About</a></li>
+                <li><a href="programs.html">Programs</a></li>
+         
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Ànúrà Initiative. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="animations.js"></script>
+</body>
+</html>

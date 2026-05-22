@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources | Ànúrà</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .resources-container { max-width: 1200px; margin: 3rem auto; padding: 0 5%; }
+        .track-section { margin-bottom: 5rem; }
+        .track-header { display: flex; align-items: center; gap: 1.5rem; margin-bottom: 2rem; }
+        .track-icon-large { font-size: 3rem; }
+        .track-info h2 { font-size: 2rem; color: var(--primary-purple); margin-bottom: 0.5rem; }
+        .track-info p { color: var(--text-light); font-size: 0.95rem; }
+        .resource-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+        .resource-item {
+            padding: 2rem;
+            border-radius: 24px;
+            background: var(--glass-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--glass-border);
+            box-shadow: var(--glass-shadow);
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .resource-item:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(192, 124, 212, 0.15); }
+        .resource-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+        .resource-item h3 { margin-bottom: 0.8rem; color: var(--text-dark); }
+        .resource-item p { color: var(--text-light); margin-bottom: 1.5rem; font-size: 0.9rem; line-height: 1.6; }
+        .resource-link {
+            display: inline-block;
+            color: var(--primary-purple);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        .resource-link:hover { text-decoration: underline; transform: translateX(4px); }
+        .back-link {
+            display: inline-block;
+            margin: 2rem 0;
+            color: var(--primary-purple);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .back-link:hover { text-decoration: underline; }
+        .track-divider { height: 2px; background: linear-gradient(90deg, transparent, var(--primary-purple), transparent); margin: 4rem 0; }
+    </style>
+</head>
+<body>
+
+    <div class="bg-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+
+    <header class="glass-nav">
+        <a href="anu.html" class="logo" style="text-decoration: none; display: flex; align-items: center;">
+        <img src="Ànúrà (Logo).png" alt="ÀNÚRÀ Logo" style="height: 40px; width: auto;">
+        </a>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="anu.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="programs.html">Programs</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <a href="contact.html" class="btn-primary nav-btn">Join Community</a>
+    </header>
+
+    <main>
+        <section class="hero glass-panel hero-container">
+            <h1>Learning Resources</h1>
+            <p class="subtext">
+                Explore our 5 STEAM tracks designed for African girls aged 10-20. Learn at your own pace with downloadable guides and curated external resources.
+            </p>
+        </section>
+
+        <div class="resources-container">
+
+            <!-- SCIENCE TRACK -->
+            <div class="track-section">
+                <div class="track-header">
+                    
+                    <div class="track-info">
+                        <h2>Science</h2>
+                        <p>Explore the world of biology, chemistry, physics & environmental science</p>
+                    </div>
+                </div>
+                <div class="resource-list">
+                    <div class="resource-item">
+                        <h3>Biology Basics</h3>
+                        <p>Learn about living organisms, ecosystems, and how your body works through interactive guides.</p>
+                        <a href="#" class="resource-link">Download Guide →</a>
+                    </div>
+                    <div class="resource-item">
+                       
+                        <h3>Chemistry in Everyday Life</h3>
+                        <p>Discover chemistry through experiments you can do at home with common materials.</p>
+                        <a href="#" class="resource-link">Download Guide →</a>
+                    </div>
+                    <div class="resource-item">
+                        
+                        <h3>Environmental Science</h3>
+                        <p>Understand climate, sustainability, and how to protect our African environment.</p>
+                        <a href="#" class="resource-link">Download Guide →</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="track-divider"></div>
+
+            <!-- TECHNOLOGY TRACK -->
+            <div class="track-section">
+                <div class="track-header">
+                   
+                    <div class="track-info">
+                        <h2>Technology</h2>
+                        <p>Master coding, web development, and digital innovation</p>
+                    </div>
+                </div>
+                <div class="resource-list">
+                    <div class="resource-item">
+                        <div class="resource-icon">🌐</div>
+                        <h3>Web Development 101</h3>
+                        <p>Build your first website with HTML, CSS, and JavaScript. Start from zero!</p>
+                        <a href="https://www.w3schools.com/html/" target="_blank" class="resource-link">Access →</a>
+                    </div>
+                    <div class="resource-item">
+                        <div class="resource-icon"><img src="Python-logo-notext.svg.png" alt="Python Icon" style="width:30px; height: auto; position: relative;"></div>
+                        <h3>Python for Beginners</h3>
+                        <p>Learn programming with Python, the easiest language to start with.</p>
+                        <a href="https://www.codecademy.com/" target="_blank" class="resource-link">Access →</a>
+                    </div>
+                    <div class="resource-item">
+                       
+                        <h3>Mobile App Basics</h3>
+                        <p>Create simple apps for Android and iOS using beginner-friendly tools.</p>
+                        <a href="#" class="resource-link">Download Guide →</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="track-divider"></div>
+
+            <!-- ENGINEERING TRACK -->
+            <div class="track-section">
+                <div class="track-header">
+                  
+                    <div class="track-info">
+                        <h2>Engineering</h2>
+                        <p>Build, design, and create with robotics and mechanical innovation</p>
+                    </div>
+                </div>
+                <div class="resource-list">
+                    <div class="resource-item">
+                      
+                        <h3>Robotics Starter Kit</h3>
+                        <p>Introduction to robotics with affordable materials and DIY projects.</p>
+                        <a href="#" class="resource-link">Download Guide →</a>
+                    </div>
+                    <div class="resource-item">
+                   
+                        <h3>Structural Design</h3>
+                        <p>Learn how to design and build structures that are strong and sustainable.</p>
+                        <a href="#" class="resource-link">Download Guide →</a>
+                    </div>
+                    <div class="resource-item">
+                        
+                        <h3>Innovation & Problem Solving</h3>
+                        <p>Use engineering thinking to solve real African community problems.</p>
+                        <a href="#" class="resource-link">Download Guide →</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="track-divider"></div>
+
+            <!-- ARTS TRACK -->
+            <div class="track-section">
+                <div class="track-header">
+             
+                    <div class="track-info">
+                        <h2>Arts & Design</h2>
+                        <p>Express creativity through digital design, animation, and visual storytelling</p>
+                    </div>
+                </div>
+                <div class="resource-list">
+                    <div class="resource-item">
+                      
+                        <h3>Digital Design with Canva</h3>
+                        <p>Create stunning graphics, posters, and social media content with Canva.</p>
+                        <a href="https://www.canva.com/" target="_blank" class="resource-link">Access →</a>
+                    </div>
+                    <div class="resource-item">
+                     
+                        <h3>Storytelling Through Video</h3>
+                        <p>Create powerful stories and messages using your phone or camera.</p>
+                        <a href="#" class="resource-link">Download Guide →</a>
+                    </div>
+                    <div class="resource-item">
+                        
+                        <h3>Animation & Motion Graphics</h3>
+                        <p>Bring your ideas to life with simple animation tools and techniques.</p>
+                        <a href="#" class="resource-link">Download Guide →</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="track-divider"></div>
+
+            <!-- MATHEMATICS TRACK -->
+            <div class="track-section">
+                <div class="track-header">
+                 
+                    <div class="track-info">
+                        <h2>Mathematics</h2>
+                        <p>Discover the beauty of math through real-world applications and creative thinking</p>
+                    </div>
+                </div>
+                <div class="resource-list">
+                    <div class="resource-item">
+                       
+                        <h3>Math in Real Life</h3>
+                        <p>See how math is used in business, cooking, building, and everyday life in Africa.</p>
+                        <a href="#" class="resource-link">Download Guide →</a>
+                    </div>
+                    <div class="resource-item">
+                
+                        <h3>Data & Statistics</h3>
+                        <p>Understand data, analyze information, and make informed decisions.</p>
+                        <a href="https://www.khanacademy.org/" target="_blank" class="resource-link">Access →</a>
+                    </div>
+                    <div class="resource-item">
+                    
+                        <h3>Logic & Problem Solving</h3>
+                        <p>Develop critical thinking skills through puzzles and mathematical challenges.</p>
+                        <a href="#" class="resource-link">Download Guide →</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <a href="anu.html" class="back-link">← Back to Home</a>
+
+    </main>
+
+  <footer class="glass-footer">
+        <div class="footer-content">
+            <a href="anu.html" style="text-decoration: none;" class="footer-logo-link">
+                            <img src="Ànúrà (Logo).png" alt="ÀNÚRÀ Logo" style="height: 40px; width: auto;">
+                                  </a>
+            <ul class="footer-links">
+                <li><a href="about.html">About</a></li>
+                <li><a href="programs.html">Programs</a></li>
+         
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Ànúrà Initiative. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="animations.js"></script>
+</body>
+</html>

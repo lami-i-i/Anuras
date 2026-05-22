@@ -1,0 +1,814 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&display=swap');
+
+/* ========================================
+   COLOR PALETTE & CSS VARIABLES
+   ======================================== */
+/* Define custom CSS variables for consistent theming throughout the website */
+:root {
+    --bg-base: #f5f0fa;
+    --primary-purple: #9b72c8;
+    --primary-purple-dark: #6b3a6e;
+    --primary-purple-light: #e8d8f8;
+    --text-dark: #3d2465;
+    --text-light: #7a5c9e;
+    --glass-bg: rgba(255, 255, 255, 0.45);
+    --glass-border: rgba(196, 168, 224, 0.35);
+    --glass-shadow: 0 8px 32px rgba(61, 36, 101, 0.08);
+}
+
+/* ========================================
+   GLOBAL STYLES
+   ======================================== */
+/* Reset all default margins, padding, and set border-box sizing for consistency */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* Base body styles */
+body {
+    background-color: var(--bg-base);
+    font-family: 'DM Sans', sans-serif;
+    color: var(--text-dark);
+    line-height: 1.6;
+    overflow-x: hidden;
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+}
+
+/* Paragraph styling for better readability */
+p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    letter-spacing: 0.3px;
+    margin-bottom: 1.2rem;
+    font-weight: 400;
+}
+
+/* Strong/bold text emphasis */
+strong, b {
+    font-weight: 600;
+}
+
+/* All headings and logo */
+h1, h2, h3, h4, .logo { 
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: 3.5rem;
+    font-weight: 800; /* Extra bold for hero sections */
+    letter-spacing: -1px;
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    margin-bottom: 0.8rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 0px;
+    margin-bottom: 0.6rem;
+}
+
+h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+}
+
+/* ========================================
+   KEYFRAME ANIMATIONS
+   ======================================== */
+/* Fade in animation with upward movement - creates elegant entrance effect for elements */
+@keyframes fadeInUp {
+    from {
+        opacity: 0; /* Start invisible */
+        transform: translateY(30px); /* Start 30px lower */
+    }
+    to {
+        opacity: 1; /* End fully visible */
+        transform: translateY(0); /* Move to normal position */
+    }
+}
+
+/* Simple fade in animation - just changes opacity without movement */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Slide in from left - element enters from the left side */
+@keyframes slideInFromLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px); /* Start 30px to the left */
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0); /* Move to normal position */
+    }
+}
+
+/* Slide in from right - element enters from the right side */
+@keyframes slideInFromRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px); /* Start 30px to the right */
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0); /* Move to normal position */
+    }
+}
+
+/* ========================================
+   ANIMATION TRANSITIONS
+   ======================================== */
+/* Apply fadeInUp animation to all main sections - creates smooth page transitions */
+main > section {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+/* Smooth transition for glass cards when hovering or being interacted with */
+.glass-card, .hub-card {
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* ========================================
+   ANIMATED BACKGROUND BLOBS
+   ======================================== */
+/* Container for floating background blobs - stays fixed behind all content */
+.bg-blobs {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1; /* Stays behind all page content */
+    pointer-events: none; /* Doesn't interfere with user interactions */
+}
+
+/* Individual blob element - creates soft, blurred circular shapes */
+.blob {
+    position: absolute;
+    filter: blur(90px); /* Heavy blur creates soft edges */
+    opacity: 0.5; /* Semi-transparent for subtle effect */
+    animation: float 12s infinite alternate ease-in-out; /* Continuous gentle floating motion */
+    border-radius: 50%; /* Makes it circular */
+}
+
+/* First blob - purple tint, positioned top-left */
+.blob-1 {
+    width: 500px;
+    height: 500px;
+    background: #e8d8f8;
+    top: -10%;
+    left: -5%;
+}
+
+/* Second blob - white tint, positioned bottom-right with delayed animation */
+.blob-2 {
+    width: 600px;
+    height: 600px;
+    background: #ffffff; /* White color */
+    bottom: -10%;
+    right: -5%;
+    animation-delay: 3s; /* Starts animation 3 seconds later for staggered effect */
+}
+
+/* Floating animation - makes blobs gently move and scale */
+@keyframes float {
+    0% {
+        transform: translate(0, 0) scale(1); /* Start at original position and size */
+    }
+    100% {
+        transform: translate(40px, 60px) scale(1.05); /* Move right/down and slightly enlarge */
+    }
+}
+
+/* ========================================
+   GLASSMORPHISM DESIGN SYSTEM
+   ======================================== */
+/* Core glassmorphism classes - creates the frosted glass effect for cards, nav, footer */
+.glass-panel, .glass-card, .glass-nav, .glass-footer {
+    background: var(--glass-bg); /* Semi-transparent white background */
+    backdrop-filter: blur(16px); /* Blur effect for glass appearance */
+    -webkit-backdrop-filter: blur(16px); /* Safari compatibility for blur effect */
+    border: 1px solid var(--glass-border); /* Light border for definition */
+    box-shadow: var(--glass-shadow); /* Subtle purple shadow for depth */
+}
+
+/* ========================================
+   NAVIGATION BAR
+   ======================================== */
+/* Main navigation header - sticky positioning keeps it visible while scrolling */
+.glass-nav {
+    display: flex; /* Flexbox layout for horizontal arrangement */
+    justify-content: space-between; /* Space out nav items */
+    align-items: center; /* Vertically center all items */
+    padding: 1.2rem 5%; /* Padding for breathing room */
+    position: sticky; /* Stays at top while scrolling */
+    top: 0;
+    z-index: 100; /* High z-index so it appears above other content */
+    border-bottom-left-radius: 24px;
+    border-bottom-right-radius: 24px;
+    animation: slideInFromLeft 0.6s ease-out; /* Slides in from left on page load */
+}
+
+/* Logo styling - prominent, purple color with letter spacing */
+.logo {
+    font-size: 1.8rem;
+    color: var(--primary-purple);
+    font-weight: 700; /* Bold weight */
+    letter-spacing: -0.5px; /* Tighter letter spacing for premium look */
+}
+
+/* Navigation links container - horizontal list of navigation items */
+.nav-links {
+    display: flex;
+    list-style: none; /* Remove default bullet points */
+    gap: 2rem; /* Space between links */
+}
+
+/* Individual navigation link styling - smooth transitions for hover effects */
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 500; /* Medium weight for prominence */
+    font-size: 0.95rem; /* Slightly smaller than body text */
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Smooth animation */
+}
+
+/* Navigation link hover state - changes color and moves up slightly */
+.nav-links a:hover {
+    color: var(--primary-purple); /* Change to purple on hover */
+    transform: translateY(-2px); /* Move up 2px for lift effect */
+}
+
+/* ========================================
+   BUTTON STYLES
+   ======================================== */
+/* Primary button - solid black, used for main CTAs (Call To Action) */
+.btn-primary {
+    background-color: #000000; /* Solid black background */
+    color: #ffffff; /* White text for contrast */
+    padding: 0.8rem 1.8rem; /* Comfortable padding for clicking */
+    border-radius: 30px; /* Rounded pill shape */
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Smooth animations */
+    display: inline-block; /* Allow padding and sizing */
+}
+
+/* Primary button hover state - lifts up with shadow for interactive feedback */
+.btn-primary:hover {
+    transform: translateY(-3px); /* Move up 3px */
+    box-shadow: 0 12px 24px rgba(0,0,0,0.2); /* Add shadow beneath */
+}
+
+/* Secondary button - transparent with border, used for less prominent CTAs */
+.btn-secondary {
+    background-color: transparent;
+    color: var(--text-dark);
+    padding: 0.8rem 1.8rem;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 500;
+    border: 1px solid var(--text-dark); /* Bordered style */
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    display: inline-block;
+}
+
+/* Secondary button hover state - fills background on hover */
+.btn-secondary:hover {
+    background-color: var(--text-dark); /* Fill with dark color */
+    color: #ffffff; /* Change text to white */
+    transform: translateY(-3px); /* Lift up with primary button */
+}
+
+/* ========================================
+   HERO SECTION
+   ======================================== */
+/* Hero container - centered intro section at top of page */
+.hero-container {
+    max-width: 900px;
+    margin: 5rem auto; /* Center horizontally, space from top */
+    padding: 4rem 2rem;
+    text-align: center;
+    border-radius: 32px;
+    animation: fadeInUp 0.8s ease-out; /* Smooth entrance animation */
+}
+
+/* Hero heading - large, bold main title */
+.hero h1 {
+    font-size: 3.5rem;
+    line-height: 1.2; /* Tight line height for large text */
+    margin-bottom: 1.5rem;
+    letter-spacing: -1px; /* Tighter spacing for large text */
+    font-family: big-caslon, serif; /* Elegant serif font for hero heading */
+}
+
+/* Subtext - supporting text below main heading */
+.subtext {
+    font-size: 1.15rem;
+    color: var(--text-light); /* Lighter color for secondary text */
+    max-width: 700px;
+    margin: 0 auto 2.5rem;
+}
+
+/* Hero button container - holds multiple buttons side by side */
+.hero-buttons {
+    display: flex;
+    justify-content: center; /* Center buttons horizontally */
+    gap: 1rem; /* Space between buttons */
+    margin-bottom: 1.5rem;
+}
+
+/* Micro text - small supporting text below buttons */
+.micro-text {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    opacity: 0.8; /* Slightly transparent */
+}
+
+/* ========================================
+   SECTION LAYOUTS
+   ======================================== */
+/* Split section - two columns side by side with content and imagery */
+.split-section {
+    display: flex;
+    gap: 3rem; /* Space between columns */
+    max-width: 1200px;
+    margin: 6rem auto;
+    padding: 0 5%;
+    align-items: center;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+/* Split section items - both columns get flex layout and hover effects */
+.split-section > * {
+    flex: 1; /* Equal width columns */
+    border-radius: 24px;
+    padding: 3rem;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Split section hover - lifts up on hover */
+.split-section > *:hover {
+    transform: translateY(-5px);
+}
+
+/* Grid section - container for card grids and major content areas */
+.grid-section {
+    max-width: 1200px;
+    margin: 6rem auto;
+    padding: 0 5%;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+/* Section title - large centered heading for each major section */
+.section-title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    letter-spacing: -0.5px;
+}
+
+/* ========================================
+   CARD STYLES
+   ======================================== */
+/* Card grid - responsive grid layout for cards */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Auto-responsive columns */
+    gap: 2rem;
+}
+
+/* Glass card - individual card with glassmorphism effect */
+.glass-card {
+    padding: 2rem;
+    border-radius: 24px;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+}
+
+/* Floating card hover - lifts and adds shadow on hover */
+.floating-card:hover {
+    transform: translateY(-10px); /* Move up 10px on hover */
+    box-shadow: 0 20px 40px rgba(192, 124, 212, 0.15); /* Enhanced shadow */
+}
+
+/* Card headings - bold text for card titles */
+.glass-card h2, .glass-card h3 {
+    margin-bottom: 1rem;
+}
+
+/* Card paragraph text - lighter color for body text */
+.glass-card p {
+    color: var(--text-light);
+}
+
+/* Center button wrapper - centers buttons within cards */
+.center-btn-wrapper {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+/* ========================================
+   OPPORTUNITIES HUB SECTION
+   ======================================== */
+/* Hub section - container for opportunities grid and content */
+.hub-section {
+    max-width: 1200px;
+    margin: 6rem auto;
+    padding: 4rem;
+    border-radius: 32px;
+}
+
+/* Hub grid - responsive grid for opportunity cards */
+.hub-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive columns */
+    gap: 1.5rem;
+}
+
+/* Hub card - individual opportunity card */
+.hub-card {
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+}
+
+/* Tags container - holds multiple tags for categorization */
+.tags {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap; /* Wrap tags to next line if needed */
+}
+
+/* Individual tag - category or deadline label */
+.tag {
+    padding: 0.3rem 0.8rem;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600; /* Bold for prominence */
+    text-transform: uppercase; /* All caps for tags */
+}
+
+/* Category tag - purple background for category tags */
+.tag.category {
+    background: rgba(192, 124, 212, 0.2); /* Light purple background */
+    color: var(--primary-purple);
+}
+
+/* Deadline tag - subtle dark background for deadline tags */
+.tag.deadline {
+    background: rgba(0, 0, 0, 0.05);
+    color: var(--text-dark);
+}
+
+/* Text link - clickable link within cards, grows to fill space */
+.text-link {
+    margin-top: auto; /* Push to bottom of card */
+    font-weight: 600;
+    color: var(--primary-purple);
+    text-decoration: none;
+    padding-top: 1rem;
+}
+
+/* Text link hover - adds underline on hover */
+.text-link:hover {
+    text-decoration: underline;
+}
+
+/* ========================================
+   FOOTER
+   ======================================== */
+/* Glass footer - main footer container with glassmorphism style */
+.glass-footer {
+    padding: 3rem 5%;
+    margin-top: 6rem;
+    border-top-left-radius: 24px;
+    border-top-right-radius: 24px;
+    animation: fadeInUp 0.8s ease-out 0.2s both; /* Delayed entrance animation */
+}
+
+/* Footer content - horizontal layout for logo and links */
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3rem;
+    margin-bottom: 2rem;
+}
+
+/* Footer logo - branding in footer */
+.footer-logo {
+    font-size: 1.5rem;
+    color: var(--primary-purple);
+    font-weight: 700;
+    transition: all 0.3s;
+}
+
+/* Footer logo link - new logo image style */
+.footer-logo-link {
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+/* Footer logo link hover - scales up on hover */
+.footer-logo-link:hover {
+    transform: scale(1.1);
+}
+
+/* Footer logo hover - scales up on hover */
+.footer-logo:hover {
+    transform: scale(1.05); /* Slightly enlarge */
+}
+
+/* Footer links - horizontal list of footer navigation */
+.footer-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+/* Footer link - individual footer link styling */
+.footer-links a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Footer link hover - changes color and lifts up */
+.footer-links a:hover {
+    color: var(--primary-purple);
+    transform: translateY(-2px);
+}
+
+/* Footer bottom - copyright text and divider */
+.footer-bottom {
+    text-align: center;
+    color: var(--text-light);
+    font-size: 0.85rem;
+    border-top: 1px solid rgba(0,0,0,0.1); /* Subtle divider line */
+    padding-top: 2rem;
+}
+
+/* ========================================
+   INTERACTIVE EFFECTS
+   ======================================== */
+/* Ripple effect - creates circular ripple animation on element click */
+.ripple {
+    position: absolute;
+    border-radius: 50%; /* Circular shape */
+    background: rgba(155, 114, 200, 0.3);
+    transform: scale(0); /* Start at center point */
+    animation: rippleEffect 0.6s ease-out;
+    pointer-events: none; /* Doesn't block user interactions */
+}
+
+/* Ripple animation - expands and fades out */
+@keyframes rippleEffect {
+    to {
+        transform: scale(4); /* Expand to 4x size */
+        opacity: 0; /* Fade to invisible */
+    }
+}
+
+/* ========================================
+   SCROLLBAR CUSTOMIZATION
+   ======================================== */
+/* Scrollbar width - controls width of vertical scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+/* Scrollbar track - background area of scrollbar */
+::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1); /* Subtle light background */
+}
+
+/* Scrollbar thumb - draggable portion of scrollbar */
+::-webkit-scrollbar-thumb {
+    background: var(--primary-purple); /* Purple color matching brand */
+    border-radius: 4px;
+}
+
+/* Scrollbar thumb hover - darker on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #3d2465;
+}
+
+/* ========================================
+   IMAGE CONTAINERS & PLACEHOLDERS
+   ======================================== */
+/* Image placeholder - styled box shown while images load or as fallback */
+.img-placeholder {
+    width: 100%;
+    height: 300px;
+    background: linear-gradient(135deg, rgba(192, 124, 212, 0.2), rgba(232, 176, 255, 0.2)); /* Purple gradient */
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    color: var(--primary-purple);
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+    border: 2px dashed rgba(192, 124, 212, 0.3); /* Dashed border */
+    transition: all 0.3s ease;
+}
+
+/* Image placeholder hover - enhances visibility on hover */
+.img-placeholder:hover {
+    background: linear-gradient(135deg, rgba(192, 124, 212, 0.3), rgba(232, 176, 255, 0.3)); /* More opaque gradient */
+    border-color: var(--primary-purple);
+    transform: scale(1.02); /* Slight enlarge */
+}
+
+/* Split image - larger placeholder for layout images */
+.split-image {
+    width: 100%;
+    height: 400px;
+    background: linear-gradient(135deg, rgba(192, 124, 212, 0.15), rgba(232, 176, 255, 0.15)); /* Subtle gradient */
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    color: var(--primary-purple);
+    border: 2px dashed rgba(192, 124, 212, 0.3);
+    font-size: 1rem;
+}
+
+/* Image card - container for card with image */
+.image-card {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Image card placeholder spacing - adds margin below image */
+.image-card .img-placeholder {
+    margin-bottom: 1rem;
+}
+
+/* ========================================
+   RESPONSIVE IMAGES
+   ======================================== */
+/* General image styling - all images are responsive and rounded */
+img {
+    max-width: 100%; /* Never wider than container */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 16px;
+    display: block; /* Remove inline spacing */
+}
+
+/* ========================================
+   ADVANCED IMAGE INTEGRATION (Background Images with Overlay)
+   ======================================== */
+/* Image hero section - full-width hero with background image and overlay */
+.image-hero-section {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Parallax effect */
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 32px;
+    overflow: hidden; /* Clip rounded corners */
+}
+
+/* Image hero section overlay - glassmorphic layer over background image */
+.image-hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(135deg, rgba(192, 124, 212, 0.35), rgba(235, 169, 255, 0.25)); /* Purple gradient overlay */
+    backdrop-filter: blur(4px); /* Slight blur for glass effect */
+    -webkit-backdrop-filter: blur(4px);
+    z-index: 1; /* Sits above background image */
+}
+
+/* Hero content - text content that appears above overlay */
+.image-hero-content {
+    position: relative;
+    z-index: 2; /* Above overlay */
+    text-align: center;
+    color: black;
+    font-family: abril-fatface, serif;
+}
+
+/* Image card background - base for cards with background images */
+.image-card-background {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    border-radius: 24px;
+    overflow: hidden;
+}
+
+/* Image card background overlay - glassmorphic layer for cards */
+.image-card-background::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(192, 124, 212, 0.35); /* Purple overlay */
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 1;
+    border-radius: 24px;
+}
+
+/* Card content wrapper - content that sits above background and overlay */
+.card-content-wrapper {
+    position: relative;
+    z-index: 2; /* Above overlay */
+    padding: 2rem;
+}
+
+/* Card image - image inside a card */
+.card-image {
+    width: 100%;
+    height: 220px;
+    object-fit: cover; /* Crop to fill without stretching */
+    border-radius: 16px;
+    margin-bottom: 1.5rem;
+}
+
+/* ========================================
+   IMAGE CARDS WITH BACKGROUND IMAGES
+   ======================================== */
+/* Image card with background - card that uses background image as backdrop */
+.image-card-with-bg {
+    position: relative;
+    border-radius: 24px;
+    overflow: hidden;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Content at bottom */
+    padding: 2rem;
+    background-size: cover;
+    background-position: center;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Image card with background overlay - glassmorphic layer */
+.image-card-with-bg::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(192, 124, 212, 0.4); /* Purple overlay */
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 1;
+}
+
+/* Image card with background hover - lifts on hover */
+.image-card-with-bg:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(192, 124, 212, 0.2);
+}
+
+/* Image card content - text content above overlay */
+.image-card-content {
+    position: relative;
+    z-index: 2; /* Above overlay */
+}
+
+/* ========================================
+   RESPONSIVE DESIGN (Mobile & Tablet)
+   ======================================== */
+/* Breakpoint: 768px (tablets and smaller screens) */
+@media (max-width: 768px) {
+    /* Change split section to single column layout */
+    .split-section { grid-template-columns: 1fr; }
+
+    /* Single column card grid for mobile */
+    .card-grid { grid-template-columns: 1fr; }
+
+    /* Single column impact grid */
+    .impact-grid { grid-template-columns: 1fr; }
+
+    /* Smaller hero section on mobile */
+    .image-hero-section { min-height: 300px; }
+
+    /* Smaller image cards on mobile */
+    .image-card-with-bg { min-height: 250px; }
+
+    /* Smaller card images on mobile */
+    .card-image { height: 150px; }
+}

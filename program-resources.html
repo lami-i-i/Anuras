@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resource Library | Ànúrà</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .detail-container { max-width: 900px; margin: 4rem auto; padding: 0 5%; }
+        .detail-section { margin-bottom: 3rem; }
+        .detail-section h2 { font-size: 1.8rem; color: var(--primary-purple); margin-bottom: 1.5rem; }
+        .detail-section p { font-size: 1.05rem; color: var(--text-light); line-height: 1.8; margin-bottom: 1rem; }
+        .steam-tracks { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin: 2rem 0; }
+        .track { padding: 2rem; border-radius: 16px; background: var(--glass-bg); border-radius: 24px; backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid var(--glass-border); }
+        .track-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+        .track h3 { color: var(--primary-purple); margin-bottom: 1rem; font-size: 1.3rem; }
+        .track ul { list-style: none; }
+        .track li { color: var(--text-light); margin-bottom: 0.5rem; }
+        .feature-list { list-style: none; margin: 2rem 0; }
+        .feature-list li { padding: 1rem; margin-bottom: 1rem; border-left: 4px solid var(--primary-purple); background: var(--glass-bg); border-radius: 8px; }
+        .back-link { display: inline-block; margin: 2rem 0; color: var(--primary-purple); text-decoration: none; font-weight: 600; }
+        .back-link:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+
+    <div class="bg-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+
+    <header class="glass-nav">
+        <a href="anu.html" class="logo" style="text-decoration: none; display: flex; align-items: center;">
+          <img src="Ànúrà (Logo).png" alt="ÀNÚRÀ Logo" style="height: 40px; width: auto;">
+        </a>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="anu.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="programs.html">Programs</a></li>
+        
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <a href="contact.html" class="btn-primary nav-btn">Join Community</a>
+    </header>
+
+    <main>
+        <section class="hero glass-panel hero-container">
+            <h1>Resource Library</h1>
+            <p class="subtext">
+                Self-paced learning across 5 STEAM tracks—explore at your own speed
+            </p>
+        </section>
+
+        <div class="detail-container">
+
+            <div class="detail-section">
+                <h2>Your Self-Paced Learning Hub</h2>
+                <p>The Ànúrà Resource Library is a curated collection of beginner-friendly guides, tutorials, and downloadable materials designed to support girls at every stage of their STEAM journey.</p>
+                <p>Whether you're just starting out or looking to deepen your skills, our resources are organized into five STEAM tracks to make it easy to find exactly what you need.</p>
+            </div>
+
+            <div class="detail-section">
+                <h2>The 5 STEAM Tracks</h2>
+                <div class="steam-tracks">
+                    <div class="track">
+                        <div class="track-icon">🔬</div>
+                        <h3>Science</h3>
+                        <ul>
+                            <li>🧬 Genetics & Biology</li>
+                            <li>⚗️ Chemistry Basics</li>
+                            <li>🌍 Environmental Science</li>
+                        </ul>
+                    </div>
+                    <div class="track">
+                        <div class="track-icon">💻</div>
+                        <h3>Technology</h3>
+                        <ul>
+                            <li>🌐 Web Development</li>
+                            <li>🐍 Python Programming</li>
+                            <li>📱 Mobile App Design</li>
+                        </ul>
+                    </div>
+                    <div class="track">
+                        <div class="track-icon">⚙️</div>
+                        <h3>Engineering</h3>
+                        <ul>
+                            <li>🤖 Robotics & Automation</li>
+                            <li>🏗️ Structural Design</li>
+                            <li>Innovation Projects</li>
+                        </ul>
+                    </div>
+                    <div class="track">
+                        <div class="track-icon"></div>
+                        <h3>Arts & Design</h3>
+                        <ul>
+                            <li>🖌️ Digital Design Tools</li>
+                            <li>🎬 Video Storytelling</li>
+                            <li>✨ Animation Basics</li>
+                        </ul>
+                    </div>
+                    <div class="track">
+                        <div class="track-icon">📐</div>
+                        <h3>Mathematics</h3>
+                        <ul>
+                            <li>🔢 Real-Life Math Applications</li>
+                            <li>📊 Data & Statistics</li>
+                            <li>🎲 Logic & Problem-Solving</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="detail-section">
+                <h2>What's in the Library?</h2>
+                <ul class="feature-list">
+                    <li><strong>Downloadable Guides</strong> - Step-by-step PDFs and workbooks you can download and work through at your own pace</li>
+                    <li><strong>Video Tutorials</strong> - Short, engaging videos from practitioners showing real-world applications</li>
+                    <li><strong>Interactive Exercises</strong> - Challenges and projects to practice what you've learned</li>
+                    <li><strong>Career Exploration Guides</strong> - Understand the career paths available in each field and what skills you need</li>
+                    <li><strong>External Resources</strong> - Curated links to partner platforms like Khan Academy, Codecademy, and Canva</li>
+                </ul>
+            </div>
+
+            <div class="detail-section">
+                <h2>How to Use the Library</h2>
+                <p><strong>Step 1:</strong> Choose a STEAM track that interests you—or try them all!</p>
+                <p><strong>Step 2:</strong> Start with the beginner sections. Each resource is labeled with difficulty levels.</p>
+                <p><strong>Step 3:</strong> Download, learn, and create. There's no rush—move at your own pace.</p>
+                <p><strong>Step 4:</strong> Share your projects with our community! We'd love to see what you've created.</p>
+            </div>
+
+            <div class="detail-section">
+                <h2>Access the Library</h2>
+                <p>All resources in the Ànúrà Resource Library are free and available to members of our community. You can access them anytime, from any device.</p>
+                <p style="margin-top: 1rem;"><a href="resources.html" class="btn-primary" style="display: inline-block;">Browse All Resources</a></p>
+            </div>
+
+        </div>
+
+        <a href="programs.html" class="back-link">← Back to Programs</a>
+
+    </main>
+
+   <footer class="glass-footer">
+        <div class="footer-content">
+            <a href="anu.html" style="text-decoration: none;" class="footer-logo-link">
+                            <img src="Ànúrà (Logo).png" alt="ÀNÚRÀ Logo" style="height: 40px; width: auto;">
+                                  </a>
+            <ul class="footer-links">
+                <li><a href="about.html">About</a></li>
+                <li><a href="programs.html">Programs</a></li>
+         
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Ànúrà Initiative. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="animations.js"></script>
+</body>
+</html>

@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programs | Ànúrà</title>
+    <link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">    <style>
+        .programs-container { max-width: 1200px; margin: 4rem auto; padding: 0 5%; font-family: 'DM Sans', sans-serif; }
+        h1, h2, h3, h4 { font-family: 'Fraunces', serif; }
+        .work-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-bottom: 4rem; }
+        .work-item {
+            position: relative;
+            height: 300px;
+            border-radius: 24px;
+            background: var(--glass-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--glass-border);
+            box-shadow: var(--glass-shadow);
+            padding: 2rem;
+            cursor: pointer;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .work-item:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(192, 124, 212, 0.25); }
+        .work-front {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            text-align: center;
+        }
+        .work-icon { width: 72px; height: 72px; margin-bottom: 1rem; display: grid; place-items: center; border-radius: 22px; background: rgba(255,255,255,0.18); box-shadow: inset 0 0 0 1px rgba(255,255,255,0.08); }
+        .work-icon svg { width: 38px; height: 38px; stroke: var(--primary-purple); fill: none; }
+        .work-front h3 { font-size: 1.8rem; color: var(--primary-purple); margin-bottom: 0.5rem; }
+        .work-front p { color: var(--text-light); font-size: 0.9rem; }
+        .work-back {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--primary-purple), #9476a6);
+            padding: 2rem;
+            border-radius: 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        
+        .work-item:hover .work-back { opacity: 1; }
+        .work-back h4 { color: white; margin-bottom: 1rem; font-size: 1.3rem; }
+        .work-back ul { list-style: none; color: white; font-size: 0.85rem; line-height: 1.8; }
+        .work-back li { margin-bottom: 0.5rem; }
+        .back-link { display: inline-block; margin: 2rem 0; color: var(--primary-purple); text-decoration: none; font-weight: 600; }
+        .back-link:hover { text-decoration: underline; }
+        @media (max-width: 768px) {
+            .work-item { height: 250px; }
+            .work-back { opacity: 1; background: linear-gradient(135deg, var(--primary-purple), #9476a6); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+
+    <header class="glass-nav">
+        <a href="anu.html" class="logo" style="text-decoration: none; display: flex; align-items: center;">
+         <img src="Ànúrà (Logo).png" alt="ÀNÚRÀ Logo" style="height: 40px; width: auto;">
+        </a>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="anu.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="programs.html">Programs</a></li>
+         
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <a href="contact.html" class="btn-primary nav-btn">Join Community</a>
+    </header>
+
+    <main>
+        <section class="image-hero-section" style="margin: 2rem 5%; border-radius: 32px;">
+            <div class="image-hero-content">
+                <h1 style="color: #1a1a1a; text-shadow: none; font-size: 2.8rem;">Our Work</h1>
+                <p class="subtext" style="color: #4a4a4a; text-shadow: none;">
+                    Ànúrà creates pathways for African girls to explore, learn, and thrive in STEAM. Hover to discover our programs and impact.
+                </p>
+            </div>
+        </section>
+
+        <div class="programs-container">
+
+
+            <!-- Quarterly Touchpoints -->
+            <div class="work-grid">
+            <div class="work-item" onclick="window.location.href='program-summer.html'">
+    <div class="work-front">
+        <div class="work-icon">
+            <svg viewBox="0 0 64 64" aria-hidden="true">
+                <path d="M32 10l6 16h16l-13 10 5 16-14-10-14 10 5-16-13-10h16z" stroke-width="4" stroke="currentColor"/>
+            </svg>
+        </div>
+        <h3>2026 STEAM Challenge</h3>
+        <p>Build Your World w/ SpacePoint</p>
+    </div>
+    <div class="work-back">
+        <h4>August 2026 Event</h4>
+        <ul>
+            <li>✓ Intensive hands-on workshops</li>
+            <li>✓ Satellite curriculum by SpacePoint</li>
+            <li>✓ Project collaboration & mentorship</li>
+            <li>✓ 30–50 girls, ages 11–18</li>
+        </ul>
+    </div>
+</div>
+
+<div class="work-item" onclick="window.location.href='program-quarterly.html'">
+    <div class="work-front">
+        <div class="work-icon">
+            <svg viewBox="0 0 64 64" aria-hidden="true">
+                <rect x="10" y="16" width="44" height="38" rx="8" stroke-width="4" stroke="currentColor"/>
+                <path d="M10 26h44" stroke-width="4" stroke="currentColor"/>
+                <path d="M20 10v12" stroke-width="4" stroke="currentColor"/>
+                <path d="M44 10v12" stroke-width="4" stroke="currentColor"/>
+            </svg>
+        </div>
+        <h3>Quarterly Touchpoints</h3>
+        <p>Regular creative challenges & opportunities</p>
+    </div>
+    <div class="work-back">
+        <h4>What We Do</h4>
+        <ul>
+            <li>✓ Monthly challenges & prompts</li>
+            <li>✓ Opportunity bulletins</li>
+            <li>✓ Resource recommendations</li>
+            <li>✓ Community recognition</li>
+        </ul>
+    </div>
+</div>
+
+
+                <!-- Summer Workshop -->
+                <div class="work-item" onclick="window.location.href='program-summer.html'">
+                    <div class="work-front">
+                        <div class="work-icon">
+                            <svg viewBox="0 0 64 64" aria-hidden="true">
+                                <path d="M32 10l6 16h16l-13 10 5 16-14-10-14 10 5-16-13-10h16z" stroke-width="4" stroke="currentColor"/>
+                            </svg>
+                        </div>
+                        <h3>August Summer Workshop</h3>
+                        <p>Intensive immersive learning experience</p>
+                    </div>
+                    <div class="work-back">
+                        <h4>Program Highlights</h4>
+                        <ul>
+                            <li>✓ Guided workshops</li>
+                            <li>✓ Project collaboration</li>
+                            <li>✓ Mentorship opportunities</li>
+                            <li>✓ Network with peers</li>
+                        </ul>
+                    </div>
+                </div>
+<div class="work-item" style="cursor: default;">
+    <div class="work-front">
+        <span style="position: absolute; top: 1.5rem; right: 1.5rem; background: rgba(181, 164, 196, 0.2); color: var(--primary-purple); font-size: 0.7rem; font-weight: 700; padding: 0.4rem 0.8rem; border-radius: 20px; text-transform: uppercase; letter-spacing: 1px;">Coming Soon</span>
+        
+        <div class="work-icon">
+            <svg viewBox="0 0 64 64" aria-hidden="true">
+                <path d="M18 14h28v36H18z" stroke-width="4" stroke="currentColor"/>
+                <path d="M18 20h28" stroke-width="4" stroke="currentColor"/>
+                <path d="M18 28h28" stroke-width="4" stroke="currentColor"/>
+            </svg>
+        </div>
+        <h3 style="color: var(--text-dark);">Resource Library</h3>
+        <p>Beginner-friendly guides covering design, coding, and STEAM careers.</p>
+    </div>
+    <div class="work-back">
+        <h4>Curated Learning Paths</h4>
+        <p style="color: white; font-size: 0.9rem;">Our upcoming collection of guides, templates, and resources to help you explore new skills.</p>
+    </div>
+</div>
+
+
+                <!-- Community Building -->
+                <div class="work-item" onclick="window.location.href='program-community.html'">
+                    <div class="work-front">
+                        <div class="work-icon">
+                            <svg viewBox="0 0 64 64" aria-hidden="true">
+                                <circle cx="22" cy="24" r="8" stroke-width="4" stroke="currentColor"/>
+                                <circle cx="42" cy="24" r="8" stroke-width="4" stroke="currentColor"/>
+                                <path d="M10 46c0-8 6-14 12-14s12 6 12 14" stroke-width="4" stroke="currentColor" fill="none"/>
+                                <path d="M30 46c0-8 6-14 12-14s12 6 12 14" stroke-width="4" stroke="currentColor" fill="none"/>
+                            </svg>
+                        </div>
+                        <h3>Community Building</h3>
+                        <p>Connect with girls across Africa</p>
+                    </div>
+                    <div class="work-back">
+                        <h4>Our Impact</h4>
+                        <ul>
+                            <li>✓ Growing network of girls</li>
+                            <li>✓ WhatsApp community</li>
+                            <li>✓ Peer mentorship</li>
+                            <li>✓ Cross-continental support</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Mentorship -->
+            <div class="work-item" style="cursor: default;">
+    <div class="work-front">
+        <span style="position: absolute; top: 1.5rem; right: 1.5rem; background: rgba(181, 164, 196, 0.2); color: var(--primary-purple); font-size: 0.7rem; font-weight: 700; padding: 0.4rem 0.8rem; border-radius: 20px; text-transform: uppercase; letter-spacing: 1px;">Coming Soon</span>
+        
+        <div class="work-icon">
+            <svg viewBox="0 0 64 64" aria-hidden="true">
+                <path d="M16 20h32v18H24l-8 8V20z" stroke-width="4" stroke="currentColor" fill="none"/>
+                <path d="M20 24h12" stroke-width="4" stroke="currentColor"/>
+                <path d="M20 32h16" stroke-width="4" stroke="currentColor"/>
+            </svg>
+        </div>
+        <h3 style="color: var(--text-dark);">Mentorship Program</h3>
+        <p>Connect with experienced role models across the tech industry.</p>
+    </div>
+    <div class="work-back">
+        <h4>Mentorship Focus</h4>
+        <ul>
+            <li>✓ One-on-one guidance</li>
+            <li>✓ Career planning</li>
+            <li>✓ Skill development</li>
+        </ul>
+    </div>
+</div>
+
+                <!-- Insights & Essays -->
+                <div class="work-item" onclick="window.location.href='blog.html'">
+                    <div class="work-front">
+                        <div class="work-icon">
+                            <svg viewBox="0 0 64 64" aria-hidden="true">
+                                <path d="M18 16h28v32H18z" stroke-width="4" stroke="currentColor" fill="none"/>
+                                <path d="M24 24h16" stroke-width="4" stroke="currentColor"/>
+                                <path d="M24 32h12" stroke-width="4" stroke="currentColor"/>
+                                <path d="M24 40h10" stroke-width="4" stroke="currentColor"/>
+                            </svg>
+                        </div>
+                        <h3>Insights & Essays</h3>
+                        <p>Thought leadership from our community</p>
+                    </div>
+                    <div class="work-back">
+                        <h4>What's Inside</h4>
+                        <ul>
+                            <li>✓ Essays on creativity & tech</li>
+                            <li>✓ Thought leadership pieces</li>
+                            <li>✓ Submit your own work</li>
+                            <li>✓ Join community discussions</li>
+                        </ul>
+                    </div>
+                </div>
+
+              
+            </div>
+
+        </div>
+
+        <a href="anu.html" class="back-link">← Back to Home</a>
+
+    </main>
+
+    <footer class="glass-footer">
+        <div class="footer-content">
+            <a href="anu.html" style="text-decoration: none;" class="footer-logo-link">
+                <img src="Ànúrà (Logo).png" alt="ÀNÚRÀ Logo" style="height: 40px; width: auto;">
+            </a>
+            <ul class="footer-links">
+                <li><a href="about.html">About</a></li>
+                <li><a href="programs.html">Programs</a></li>
+                <li><a href="resources.html">Resources</a></li>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Ànúrà Initiative. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="animations.js"></script>
+</body>
+</html>
