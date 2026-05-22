@@ -846,28 +846,92 @@ img {
 }
 
 /* ========================================
-   RESPONSIVE DESIGN (Mobile & Tablet)
+   RESPONSIVE DESIGN (Tablets & Mobile)
    ======================================== */
-/* Breakpoint: 768px (tablets and smaller screens) */
+
+/* 1. TABLET SCREENS (iPads, smaller laptops) */
+@media (max-width: 1024px) {
+    .split-section { gap: 2rem; padding: 0 5%; }
+    .hero h1 { font-size: 3rem; }
+    .nav-links { gap: 1.5rem; }
+}
+
+/* 2. MOBILE SCREENS (Phones) */
 @media (max-width: 768px) {
-    /* Auto scale text down */
+    /* Auto scale core layout */
     html { font-size: 14px; }
+    
+    /* Typography adjustments to prevent horizontal scrolling */
+    .hero h1 { font-size: 2.3rem; letter-spacing: -0.5px; }
+    h2 { font-size: 1.8rem; }
+    .section-title { font-size: 2rem; margin-bottom: 2rem; }
+    
+    /* Mobile Navbar: Stacks beautifully like an app menu */
+    .glass-nav { 
+        flex-direction: column; 
+        padding: 1rem 5%; 
+        gap: 1.2rem; 
+    }
+    .glass-nav > a.logo { justify-content: center; margin: 0 auto; }
+    .nav-links { 
+        flex-wrap: wrap; /* Allows links to flow to a new line if needed */
+        justify-content: center; 
+        gap: 1rem; 
+    }
+    .glass-nav > .nav-btn { 
+        width: 100% !important; 
+        text-align: center; 
+        margin: 0; 
+    }
 
-    /* Change split section to single column layout */
-    .split-section { grid-template-columns: 1fr; }
+    /* Layout Stacking: Turns side-by-side into top-and-bottom */
+    .split-section { 
+        flex-direction: column; 
+        margin: 3rem auto; 
+    }
+    .split-section .hero-text { 
+        padding-right: 0; 
+        margin-bottom: 2rem; 
+        text-align: center; 
+    }
+    .split-section .hero-text p {
+        text-align: center !important;
+    }
+    /* Centers the buttons under the text */
+    .split-section .hero-text div {
+        justify-content: center;
+    }
 
-    /* Single column card grid for mobile */
-    .card-grid { grid-template-columns: 1fr; }
+    /* Spacing & Padding shrinking for smaller screens */
+    .hero-container { margin: 3rem auto; padding: 2rem 1rem; }
+    .grid-section { margin: 3rem auto; }
+    .glass-card { padding: 1.5rem; }
+    
+    /* Bank Card scaling for the donation page */
+    .bank-card { padding: 1.5rem; }
+    .account-number { font-size: 2rem; letter-spacing: 2px; }
 
-    /* Single column impact grid */
-    .impact-grid { grid-template-columns: 1fr; }
+    /* Footer Stacking */
+    .footer-content { 
+        flex-direction: column; 
+        text-align: center; 
+        gap: 1.5rem; 
+    }
+    .footer-links { 
+        flex-wrap: wrap; 
+        justify-content: center; 
+    }
+}
 
-    /* Smaller hero section on mobile */
-    .image-hero-section { min-height: 300px; }
-
-    /* Smaller image cards on mobile */
-    .image-card-with-bg { min-height: 250px; }
-
-    /* Smaller card images on mobile */
-    .card-image { height: 150px; }
+/* 3. ULTRA SMALL SCREENS (Older iPhones) */
+@media (max-width: 480px) {
+    /* Forces buttons to take up the full screen width for easy thumb tapping */
+    .hero-buttons { flex-direction: column; width: 100%; }
+    .hero-buttons a { width: 100%; text-align: center; margin-bottom: 0.5rem; }
+    
+    .split-section .hero-text div { flex-direction: column; width: 100%; }
+    .split-section .hero-text div a { width: 100%; text-align: center; margin-bottom: 0.5rem; }
+    
+    .impact-item { flex-direction: column; text-align: center; }
+    .impact-number { margin: 0 auto 1rem auto; }
 }
