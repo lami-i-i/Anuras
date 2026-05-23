@@ -896,7 +896,8 @@ img {
 @media (max-width: 768px) {
     /* Mobile Navbar Setup */
     .glass-nav { flex-direction: column; padding: 1.5rem; align-items: flex-start; }
-    .nav-top-row { display: flex; justify-content: space-between; align-items: center; width: 100%; }
+    .nav-top-row { display: flex; justify-content: space-between; align-items: center; width: auto; }
+.glass-nav .nav-btn { white-space: nowrap; height: fit-content; }
     .hamburger { display: block; } /* Show hamburger on mobile */
     
     /* Hide the menu and button by default on mobile */
