@@ -4,50 +4,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>2026 STEAM Challenge | Ànúrà</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=4"> 
     
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&display=swap" rel="stylesheet">
     
     <style>
-        .hero-clean { max-width: 900px; margin: 6rem auto 4rem; padding: 2rem 5%; text-align: center; }
-        .hero-clean h1 { font-size: 3.2rem; line-height: 1.2; margin-bottom: 1.5rem; color: var(--text-dark); letter-spacing: -1px; }
-        .hero-clean .subtext { font-size: 1.15rem; color: var(--text-light); max-width: 700px; margin: 0 auto 2.5rem; line-height: 1.7; }
+        .hero-clean { max-width: 900px; margin: 4rem auto; padding: 2rem 5%; text-align: center; }
+        .hero-clean h1 { font-size: 3.5rem; line-height: 1.1; margin-bottom: 1.5rem; color: var(--text-dark); letter-spacing: -1px; }
+        .hero-clean .subtext { font-size: 1.2rem; color: var(--text-light); max-width: 700px; margin: 0 auto 2.5rem; line-height: 1.7; }
         
-        .detail-container { max-width: 1000px; margin: 0 auto 6rem; padding: 0 5%; }
-        .detail-section { margin-bottom: 4rem; }
-        .detail-section h2 { font-size: 2rem; color: var(--text-dark); margin-bottom: 1.5rem; letter-spacing: -0.5px; }
-        .detail-section p { font-size: 1.05rem; color: var(--text-light); line-height: 1.8; margin-bottom: 1.5rem; }
+        .detail-container { max-width: 1100px; margin: 0 auto 6rem; padding: 0 5%; }
+        .detail-section { margin-bottom: 5rem; }
+        .detail-section h2 { font-size: 2.2rem; color: var(--text-dark); margin-bottom: 1.5rem; letter-spacing: -0.5px; }
+        .detail-section p { font-size: 1.1rem; color: var(--text-light); line-height: 1.8; margin-bottom: 1.5rem; }
         
-        /* Main Event Highlight Box */
-        .highlight-card { padding: 3rem; border-radius: 24px; background: linear-gradient(135deg, rgba(255,255,255,0.8), rgba(255,255,255,0.4)); backdrop-filter: blur(20px); border: 1px solid var(--primary-purple); box-shadow: 0 20px 40px rgba(181, 164, 196, 0.15); margin-bottom: 4rem; }
-        .highlight-card h3 { font-size: 1.8rem; color: var(--text-dark); margin-bottom: 1rem; }
+        /* Main Event Highlight Box - Enhanced with Glassmorphism */
+        .highlight-card { 
+            padding: 4rem; 
+            border-radius: 32px; 
+            background: linear-gradient(135deg, rgba(255,255,255,0.85), rgba(255,255,255,0.4)); 
+            backdrop-filter: blur(24px); 
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid var(--glass-border); 
+            box-shadow: 0 30px 60px rgba(107, 58, 110, 0.08); 
+            margin-bottom: 5rem;
+            text-align: center;
+        }
+        .highlight-card h3 { font-size: 2.2rem; color: var(--text-dark); margin-bottom: 1.5rem; letter-spacing: -0.5px; }
         
-        /* Cleaned up Stat Display */
-        .stat-display { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 2rem; margin: 2.5rem 0; }
-        .stat-box { text-align: center; padding: 2rem 1.5rem; border-radius: 20px; background: rgba(181, 164, 196, 0.15); border: 1px solid rgba(181, 164, 196, 0.3); }
-        .stat-big { font-size: 2.5rem; font-weight: 700; color: var(--primary-purple); margin-bottom: 0.5rem; font-family: 'Outfit', sans-serif; }
+        .stat-display { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 2rem; margin: 3rem 0; }
+        .stat-box { text-align: center; padding: 2.5rem 1.5rem; border-radius: 24px; background: rgba(255, 255, 255, 0.5); border: 1px solid rgba(196, 168, 224, 0.3); }
+        .stat-big { font-size: 3rem; font-weight: 700; color: var(--primary-purple); margin-bottom: 0.5rem; letter-spacing: -1px; }
         
-        /* Feature List Styling */
-        .feature-list { list-style: none; margin: 2rem 0; display: grid; grid-template-columns: 1fr; gap: 1rem; }
-        .feature-list li { padding: 1.5rem; background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 16px; color: var(--text-dark); display: flex; align-items: flex-start; gap: 1rem; }
-        .feature-list li strong { color: var(--primary-purple); display: block; margin-bottom: 0.3rem; font-family: 'Outfit', sans-serif; font-size: 1.1rem; }
+        .feature-list { list-style: none; margin: 2rem 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .feature-list li { padding: 2.5rem; background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 24px; color: var(--text-dark); display: flex; flex-direction: column; gap: 1rem; transition: transform 0.3s ease; box-shadow: var(--glass-shadow); }
+        .feature-list li:hover { transform: translateY(-5px); }
+        .feature-list li strong { color: var(--primary-purple); display: block; margin-bottom: 0.5rem; font-size: 1.3rem; letter-spacing: -0.5px; }
         
-        /* Past Events Grid */
-        .past-events-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem; }
-        .past-event-card { padding: 2.5rem; border-radius: 24px; background: var(--glass-bg); border: 1px solid var(--glass-border); transition: transform 0.3s ease; }
-        .past-event-card:hover { transform: translateY(-5px); box-shadow: var(--glass-shadow); }
-        .past-event-card h4 { color: var(--primary-purple); font-size: 1.3rem; margin-bottom: 1rem; }
+        .past-events-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; margin-top: 3rem; }
+        .past-event-card { padding: 3rem; border-radius: 24px; background: var(--glass-bg); border: 1px solid var(--glass-border); transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); box-shadow: var(--glass-shadow); }
+        .past-event-card:hover { transform: translateY(-8px); box-shadow: 0 25px 50px rgba(107, 58, 110, 0.1); border-color: var(--primary-purple-light); }
+        .past-event-card h4 { color: var(--text-dark); font-size: 1.6rem; margin-bottom: 1.5rem; letter-spacing: -0.5px; }
         
-        .back-link { display: inline-block; margin-top: 2rem; color: var(--text-light); text-decoration: none; font-weight: 500; transition: color 0.3s; }
-        .back-link:hover { color: var(--primary-purple); }
+        /* Specific Mobile Tweaks */
+        @media (max-width: 768px) {
+            .hero-clean h1 { font-size: 2.5rem; }
+            .highlight-card { padding: 2rem 1.5rem; }
+            .stat-display { gap: 1rem; margin: 2rem 0; }
+            .stat-box { padding: 1.5rem 1rem; }
+            .stat-big { font-size: 2rem; }
+            .past-event-card { padding: 2rem 1.5rem; }
+        }
     </style>
 </head>
 <body>
 
-    <div class="bg-blobs">
-        <div class="blob blob-1"></div>
-        <div class="blob blob-2"></div>
-    </div>
+    <div id="canvas-container"></div>
 
     <header class="glass-nav">
         <a href="anu.html" class="logo" style="text-decoration: none; display: flex; align-items: center;">
@@ -65,6 +77,10 @@
     </header>
 
     <main>
+        <div style="max-width: 1200px; margin: 3rem auto 0; padding: 0 5%;">
+            <img src="anura x spacepoint.png" alt="2026 STEAM Challenge Banner" style="width: 100%; height: 400px; object-fit: cover; border-radius: 32px; box-shadow: 0 20px 40px rgba(0,0,0,0.1);">
+        </div>
+
         <section class="hero-clean">
             <h1>Build Your World: 2026 STEAM Challenge</h1>
             <p class="subtext">
@@ -75,81 +91,91 @@
         <div class="detail-container">
 
             <div class="highlight-card">
-                <div style="display: inline-block; background: var(--text-dark); color: white; padding: 0.4rem 1rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 1.5rem;">Upcoming Event</div>
+                <div style="display: inline-block; background: var(--text-dark); color: white; padding: 0.5rem 1.2rem; border-radius: 20px; font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 2rem;">Upcoming Event</div>
                 <h3>The SpacePoint Partnership</h3>
-                <p>This July and August, Ànúrà is bringing aerospace technology directly to Lagos. In an exciting partnership with SpacePoint, we are introducing a unique curriculum based on real satellite technology.</p>
-                <p>Designed for girls aged 11–18, this challenge will utilize specialized challenge cards to teach hands-on, satellite-related tasks, proving that the sky is not the limit—it's just the beginning.</p>
+                <p style="max-width: 800px; margin: 0 auto 1.5rem; font-size: 1.15rem;">This July and August, Ànúrà is bringing aerospace technology directly to Lagos. In an exciting partnership with SpacePoint, we are introducing a unique curriculum based on real satellite technology.</p>
+                <p style="max-width: 800px; margin: 0 auto; font-size: 1.15rem;">Designed for girls aged 11–18, this challenge will utilize specialized challenge cards to teach hands-on, satellite-related tasks, proving that the sky is not the limit—it's just the beginning.</p>
                 
                 <div class="stat-display">
                     <div class="stat-box">
                         <div class="stat-big">Jul-Aug</div>
-                        <p style="color: var(--text-light); font-weight: 500;">2026 Timeline</p>
+                        <p style="color: var(--text-light); font-weight: 600; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px;">2026 Timeline</p>
                     </div>
                     <div class="stat-box">
                         <div class="stat-big">Lagos</div>
-                        <p style="color: var(--text-light); font-weight: 500;">Location</p>
+                        <p style="color: var(--text-light); font-weight: 600; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px;">Location</p>
                     </div>
                     <div class="stat-box">
                         <div class="stat-big">30-50</div>
-                        <p style="color: var(--text-light); font-weight: 500;">Girls Expected</p>
+                        <p style="color: var(--text-light); font-weight: 600; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px;">Girls Expected</p>
                     </div>
                 </div>
 
-                <a href="contact.html" class="btn-primary" style="margin-top: 1rem;">Join the Waitlist</a>
+                <a href="contact.html" class="btn-primary" style="padding: 1rem 2.5rem; font-size: 1.1rem; margin-top: 1rem;">Join the Waitlist</a>
             </div>
 
             <div class="detail-section">
-                <h2>What You'll Experience</h2>
+                <h2 style="text-align: center; margin-bottom: 3rem;">What You'll Experience</h2>
                 <ul class="feature-list">
                     <li>
-                        <div>
-                            <strong>Guided Tech Workshops</strong>
-                            <span style="color: var(--text-light);">Expert facilitators walk you through advanced STEM concepts and creative techniques step-by-step.</span>
-                        </div>
+                        <strong>Guided Tech Workshops</strong>
+                        <span style="color: var(--text-light); font-size: 1.05rem; line-height: 1.7;">Expert facilitators walk you through advanced STEM concepts and creative techniques step-by-step.</span>
                     </li>
                     <li>
-                        <div>
-                            <strong>Satellite & Aerospace Curriculum</strong>
-                            <span style="color: var(--text-light);">Engage directly with SpacePoint's challenge cards to learn how real satellite technology operates and solves global problems.</span>
-                        </div>
+                        <strong>Satellite & Aerospace Curriculum</strong>
+                        <span style="color: var(--text-light); font-size: 1.05rem; line-height: 1.7;">Engage directly with SpacePoint's challenge cards to learn how real satellite technology operates and solves global problems.</span>
                     </li>
                     <li>
-                        <div>
-                            <strong>Project Collaboration</strong>
-                            <span style="color: var(--text-light);">Work in teams to design, build, and present solutions, simulating what real innovation labs and tech companies do.</span>
-                        </div>
+                        <strong>Project Collaboration</strong>
+                        <span style="color: var(--text-light); font-size: 1.05rem; line-height: 1.7;">Work in teams to design, build, and present solutions, simulating what real innovation labs and tech companies do.</span>
                     </li>
                     <li>
-                        <div>
-                            <strong>Mentorship Opportunities</strong>
-                            <span style="color: var(--text-light);">Connect with women working in STEM fields who will share their experiences, provide feedback on your projects, and offer career advice.</span>
-                        </div>
+                        <strong>Mentorship Opportunities</strong>
+                        <span style="color: var(--text-light); font-size: 1.05rem; line-height: 1.7;">Connect with women working in STEM fields who will share their experiences, provide feedback on your projects, and offer career advice.</span>
                     </li>
                 </ul>
             </div>
 
-            <div class="detail-section" style="margin-top: 6rem;">
-                <h2>Our Previous Impact</h2>
-                <p>We've been building this community year by year. Here is a look at what we achieved in our previous summer programs.</p>
+            <div class="detail-section" style="margin-top: 8rem;">
+                <h2 style="text-align: center;">Our Previous Impact</h2>
+                <p style="text-align: center; max-width: 700px; margin: 0 auto 4rem;">We've been building this community year by year. Here is a look at what we achieved in our previous summer programs.</p>
                 
                 <div class="past-events-grid">
                     <div class="past-event-card">
-                        <h4>2025 Virtual Program</h4>
-                        <p style="color: var(--text-light); font-size: 0.95rem; margin-bottom: 1.5rem;">A massive 2-week digital intensive featuring interactive virtual workshops, digital design, animation, and STEM fundamentals. Guest speaker Ntýam Princia joined to guide the girls on personal growth and STEM opportunities.</p>
-                        <ul style="list-style: none; padding: 0; color: var(--text-dark); font-size: 0.9rem;">
-                            <li style="margin-bottom: 0.5rem;">✓ 3x Weekly Sessions</li>
-                            <li style="margin-bottom: 0.5rem;">✓ Final showcase presentations</li>
-                            <li>✓ Cross-continental networking</li>
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
+                            <h4>2025 Virtual Program</h4>
+                            <span style="background: rgba(155, 114, 200, 0.15); color: var(--primary-purple); padding: 0.3rem 0.8rem; border-radius: 12px; font-size: 0.8rem; font-weight: 700;">Digital</span>
+                        </div>
+                        <p style="color: var(--text-light); font-size: 1.05rem; line-height: 1.7; margin-bottom: 2rem;">A massive 2-week digital intensive featuring interactive virtual workshops, digital design, animation, and STEM fundamentals. Guest speaker Ntýam Princia joined to guide the girls on personal growth and STEM opportunities.</p>
+                        <ul style="list-style: none; padding: 0; color: var(--text-dark); font-size: 0.95rem;">
+                            <li style="margin-bottom: 0.8rem; display: flex; gap: 0.8rem;">
+                                <span style="color: var(--primary-purple);">✦</span> 3x Weekly Sessions
+                            </li>
+                            <li style="margin-bottom: 0.8rem; display: flex; gap: 0.8rem;">
+                                <span style="color: var(--primary-purple);">✦</span> Final showcase presentations
+                            </li>
+                            <li style="display: flex; gap: 0.8rem;">
+                                <span style="color: var(--primary-purple);">✦</span> Cross-continental networking
+                            </li>
                         </ul>
                     </div>
 
                     <div class="past-event-card">
-                        <h4>2024 STEM Hackathon</h4>
-                        <p style="color: var(--text-light); font-size: 0.95rem; margin-bottom: 1.5rem;">Our inaugural in-person event at Slum2School in Lagos. 18 girls formed teams to develop technological solutions. Team Ruby took home the grand prize of ₦50,000 for their innovative project.</p>
-                        <ul style="list-style: none; padding: 0; color: var(--text-dark); font-size: 0.9rem;">
-                            <li style="margin-bottom: 0.5rem;">✓ Keynote by Ms. Lola Aworanti-Ekugo</li>
-                            <li style="margin-bottom: 0.5rem;">✓ Supported by The Bloom Africa</li>
-                            <li>✓ Hands-on creative challenges</li>
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
+                            <h4>2024 STEM Hackathon</h4>
+                            <span style="background: rgba(155, 114, 200, 0.15); color: var(--primary-purple); padding: 0.3rem 0.8rem; border-radius: 12px; font-size: 0.8rem; font-weight: 700;">In-Person</span>
+                        </div>
+                        <p style="color: var(--text-light); font-size: 1.05rem; line-height: 1.7; margin-bottom: 2rem;">Our inaugural in-person event at Slum2School in Lagos. 18 girls formed teams to develop technological solutions. Team Ruby took home the grand prize of ₦50,000 for their innovative project.</p>
+                        <ul style="list-style: none; padding: 0; color: var(--text-dark); font-size: 0.95rem;">
+                            <li style="margin-bottom: 0.8rem; display: flex; gap: 0.8rem;">
+                                <span style="color: var(--primary-purple);">✦</span> Keynote by Ms. Lola Aworanti-Ekugo
+                            </li>
+                            <li style="margin-bottom: 0.8rem; display: flex; gap: 0.8rem;">
+                                <span style="color: var(--primary-purple);">✦</span> Supported by The Bloom Africa
+                            </li>
+                            <li style="display: flex; gap: 0.8rem;">
+                                <span style="color: var(--primary-purple);">✦</span> Hands-on creative challenges
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -158,19 +184,18 @@
         </div>
 
         <div style="text-align: center; margin-bottom: 4rem;">
-            <a href="programs.html" class="back-link">&larr; Back to All Programs</a>
+            <a href="programs.html" class="btn-secondary">&larr; Back to All Programs</a>
         </div>
     </main>
 
-     <footer class="glass-footer">
+    <footer class="glass-footer">
         <div class="footer-content">
             <a href="anu.html" style="text-decoration: none;" class="footer-logo-link">
-                            <img src="Ànúrà (Logo).png" alt="ÀNÚRÀ Logo" style="height: 40px; width: auto;">
-                                  </a>
+                <img src="Ànúrà (Logo).png" alt="ÀNÚRÀ Logo" style="height: 40px; width: auto;">
+            </a>
             <ul class="footer-links">
                 <li><a href="about.html">About</a></li>
                 <li><a href="programs.html">Programs</a></li>
-         
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </div>
@@ -180,5 +205,44 @@
     </footer>
 
     <script src="animations.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const container = document.getElementById('canvas-container');
+            if (!container) return;
+            const canvas = document.createElement('canvas');
+            const ctx = canvas.getContext('2d');
+            container.appendChild(canvas);
+            let particles = [];
+            let mouse = { x: null, y: null, radius: 120 };
+            window.addEventListener('resize', () => { canvas.width = window.innerWidth; canvas.height = window.innerHeight; initParticles(); });
+            window.addEventListener('mousemove', (e) => { mouse.x = e.clientX; mouse.y = e.clientY; });
+            window.addEventListener('mouseout', () => { mouse.x = null; mouse.y = null; });
+            canvas.width = window.innerWidth; canvas.height = window.innerHeight;
+            class Particle {
+                constructor() { this.x = Math.random() * canvas.width; this.y = Math.random() * canvas.height; this.vx = (Math.random() - 0.5) * 0.5; this.vy = (Math.random() - 0.5) * 0.5; this.radius = Math.random() * 2 + 1; }
+                update() {
+                    this.x += this.vx; this.y += this.vy;
+                    if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+                    if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+                    if (mouse.x && mouse.y) { let dx = mouse.x - this.x; let dy = mouse.y - this.y; let dist = Math.sqrt(dx*dx + dy*dy); if (dist < mouse.radius) { let force = (mouse.radius - dist) / mouse.radius; this.x -= dx / dist * force * 2; this.y -= dy / dist * force * 2; } }
+                }
+                draw() { ctx.beginPath(); ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2); ctx.fillStyle = 'rgba(155, 114, 200, 0.4)'; ctx.fill(); }
+            }
+            function initParticles() { particles = []; let count = Math.floor((canvas.width * canvas.height) / 10000); for(let i=0; i<count; i++) particles.push(new Particle()); }
+            function animateCanvas() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                particles.forEach(p => { p.update(); p.draw(); });
+                for (let i = 0; i < particles.length; i++) {
+                    for (let j = i + 1; j < particles.length; j++) {
+                        let dx = particles[i].x - particles[j].x; let dy = particles[i].y - particles[j].y; let dist = Math.sqrt(dx*dx + dy*dy);
+                        if (dist < 120) { ctx.beginPath(); ctx.moveTo(particles[i].x, particles[i].y); ctx.lineTo(particles[j].x, particles[j].y); ctx.strokeStyle = `rgba(155, 114, 200, ${0.2 * (1 - dist/120)})`; ctx.lineWidth = 1; ctx.stroke(); }
+                    }
+                }
+                requestAnimationFrame(animateCanvas);
+            }
+            initParticles(); animateCanvas();
+        });
+    </script>
 </body>
 </html>
