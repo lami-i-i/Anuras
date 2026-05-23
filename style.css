@@ -886,3 +886,31 @@ img {
     .image-card-with-bg::before { background: rgba(107, 58, 110, 0.6); } /* Darker overlay so text is readable */
     .hover-photo-container img { transform: scale(1.02); } /* Gives a slight tapped/zoomed feel automatically */
 }
+/* ========================================
+   HAMBURGER MENU & MOBILE NAV
+   ======================================== */
+/* Hide hamburger icon on desktop */
+.hamburger { display: none; cursor: pointer; color: var(--primary-purple); }
+.nav-top-row { display: flex; justify-content: space-between; align-items: center; width: 100%; }
+
+@media (max-width: 768px) {
+    /* Mobile Navbar Setup */
+    .glass-nav { flex-direction: column; padding: 1.5rem; align-items: flex-start; }
+    .nav-top-row { display: flex; justify-content: space-between; align-items: center; width: 100%; }
+    .hamburger { display: block; } /* Show hamburger on mobile */
+    
+    /* Hide the menu and button by default on mobile */
+    .glass-nav > .nav-menu, 
+    .glass-nav > .nav-btn { 
+        display: none; 
+        width: 100%;
+        margin-top: 1.5rem;
+    }
+    
+    /* When the .active class is added by JavaScript, show them! */
+    .glass-nav > .nav-menu.active { display: block; }
+    .glass-nav > .nav-btn.active { display: inline-block; text-align: center; width: 100% !important; margin: 1.5rem 0 0 0; }
+    
+    .nav-links { flex-direction: column; gap: 1.5rem; text-align: center; width: 100%; }
+    .nav-links li { width: 100%; }
+}
