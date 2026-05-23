@@ -338,3 +338,21 @@ document.addEventListener('DOMContentLoaded', () => {
 window.addEventListener('load', () => {
     document.body.style.transition = 'all 0.3s ease';
 });
+
+
+/* ========================================
+   MOBILE MENU TOGGLE LOGIC
+   ======================================== */
+document.addEventListener('DOMContentLoaded', () => {
+    const mobileMenuBtn = document.getElementById('mobile-menu');
+    const navMenu = document.querySelector('.nav-menu');
+    const navBtn = document.querySelector('.nav-btn');
+
+    if (mobileMenuBtn) {
+        mobileMenuBtn.addEventListener('click', () => {
+            // Toggles the 'active' class on and off every time you click
+            if (navMenu) navMenu.classList.toggle('active');
+            if (navBtn) navBtn.classList.toggle('active');
+        });
+    }
+});
