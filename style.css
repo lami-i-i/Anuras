@@ -887,31 +887,50 @@ img {
     .hover-photo-container img { transform: scale(1.02); } /* Gives a slight tapped/zoomed feel automatically */
 }
 /* ========================================
-   HAMBURGER MENU & MOBILE NAV
+   HAMBURGER MENU & NAV FIX (BULLETPROOF)
    ======================================== */
-/* Hide hamburger icon on desktop */
-.hamburger { display: none; cursor: pointer; color: var(--primary-purple); }
-.nav-top-row { display: flex; justify-content: space-between; align-items: center; width: 100%; }
+/* --- DESKTOP RULES --- */
+.glass-nav { 
+    display: flex !important; 
+    flex-direction: row !important; 
+    justify-content: space-between !important; 
+    align-items: center !important; 
+}
+.nav-top-row { 
+    display: flex !important; 
+    justify-content: space-between; 
+    align-items: center; 
+    width: auto !important; 
+}
+.hamburger { 
+    display: none; 
+    cursor: pointer; 
+    color: var(--primary-purple); 
+}
+.glass-nav > .nav-menu { 
+    display: block !important; 
+}
+.glass-nav > .nav-btn { 
+    display: inline-block !important; 
+    white-space: nowrap !important; /* Forces text onto one line */
+    flex-shrink: 0 !important; /* Stops the button from being squished */
+    width: auto !important; 
+}
 
+/* --- MOBILE RULES --- */
 @media (max-width: 768px) {
-    /* Mobile Navbar Setup */
-    .glass-nav { flex-direction: column; padding: 1.5rem; align-items: flex-start; }
-    .nav-top-row { display: flex; justify-content: space-between; align-items: center; width: auto; }
-.glass-nav .nav-btn { white-space: nowrap; height: fit-content; }
-    .hamburger { display: block; } /* Show hamburger on mobile */
+    .glass-nav { flex-direction: column !important; align-items: flex-start !important; padding: 1.5rem !important; }
+    .nav-top-row { width: 100% !important; }
+    .hamburger { display: block !important; } 
     
-    /* Hide the menu and button by default on mobile */
+    /* Hide menu/button by default */
     .glass-nav > .nav-menu, 
-    .glass-nav > .nav-btn { 
-        display: none; 
-        width: 100%;
-        margin-top: 1.5rem;
-    }
+    .glass-nav > .nav-btn { display: none !important; width: 100% !important; margin-top: 1.5rem; }
     
-    /* When the .active class is added by JavaScript, show them! */
-    .glass-nav > .nav-menu.active { display: block; }
-    .glass-nav > .nav-btn.active { display: inline-block; text-align: center; width: 100% !important; margin: 1.5rem 0 0 0; }
+    /* Show when clicked */
+    .glass-nav > .nav-menu.active { display: block !important; }
+    .glass-nav > .nav-btn.active { display: inline-block !important; text-align: center !important; margin: 1.5rem 0 0 0 !important; }
     
-    .nav-links { flex-direction: column; gap: 1.5rem; text-align: center; width: 100%; }
+    .nav-links { flex-direction: column !important; gap: 1.5rem; text-align: center; width: 100%; }
     .nav-links li { width: 100%; }
 }
