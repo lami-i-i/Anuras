@@ -20,6 +20,13 @@
         .back-link:hover { text-decoration: underline; }
         .partner-logo { transition: all 0.3s ease; transform: scale(1); }
         .partner-logo:hover { transform: scale(1.1); filter: drop-shadow(0 8px 16px rgba(168, 146, 184, 0.3)); }
+
+                /* New Image Gallery Styles */
+        .gallery-section { margin: 4rem 0; padding: 3rem; border-radius: 24px; background: var(--glass-bg); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid var(--glass-border); box-shadow: var(--glass-shadow); }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .gallery-img-wrapper { overflow: hidden; border-radius: 16px; }
+        .gallery-img { width: 100%; height: 250px; object-fit: cover; border-radius: 16px; transition: transform 0.4s ease; display: block; }
+        .gallery-img-wrapper:hover .gallery-img { transform: scale(1.05); }
     </style>
 </head>
 <body>
@@ -111,6 +118,35 @@
                         <p style="color: var(--text-light); line-height: 1.6; font-size: 0.85rem; margin-top: 0.5rem;">Community partner & advocacy collaborator</p>
                     </div>
 
+                </div>
+            </section>
+
+                <section class="gallery-section">
+                <h2 style="font-size: 2rem; text-align: center; color: var(--primary-purple); margin-bottom: 0.5rem;">Impact in Action</h2>
+                <p style="text-align: center; color: var(--text-light); margin-bottom: 2rem;">Glimpses from our previous programs.</p>
+                
+                <div class="gallery-grid">
+                    <div class="gallery-img-wrapper">
+                        <img src="Girl in Bloom_28.jpg" alt="Girls collaborating at STEM Hackathon" class="gallery-img">
+                    </div>
+                    <div class="gallery-img-wrapper">
+                        <img src="Girl in Bloom_157.jpg" alt="Team Ruby winning project" class="gallery-img">
+                    </div>
+                    <div class="gallery-img-wrapper">
+                        <img src="Girl in Bloom_195.jpg" alt="Virtual Summer Program Session" class="gallery-img">
+                    </div>
+                    <div class="gallery-img-wrapper">
+                        <img src="Screenshot 2025-07-18 at 17.47.37.png" alt="Virtual Summer Program Session" class="gallery-img">
+                    </div>
+                    <div class="gallery-img-wrapper">
+                        <img src="IMG_4698.PNG" alt="Virtual Summer Program Session" class="gallery-img">
+                    </div>
+                    <div class="gallery-img-wrapper">
+                        <img src="Participants 2025 review.png" alt="Virtual Summer Program Session" class="gallery-img">
+                    </div>
+                    <div class="gallery-img-wrapper">
+                        <img src="Girl in Bloom_45.jpg" alt="Virtual Summer Program Session" class="gallery-img">
+                    </div>
                 </div>
             </section>
 
