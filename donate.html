@@ -256,95 +256,109 @@
         });
     </script>
 
-    <script src="https://js.paystack.co/v2/inline.js"></script>
-    <script>
-        (function () {
-            // TODO: replace with your real Paystack public key from
-            // https://dashboard.paystack.co/#/settings/developer
-            // Use a pk_test_... key while testing, pk_live_... when you go live.
-            const PAYSTACK_PUBLIC_KEY = "FLWPUBK_TEST-005620341f9e9860c442b15bcaaeff19-X";
+  <script src="https://checkout.flutterwave.com/v3.js"></script>
+   <script>
+    (function () {
+        // Your Flutterwave public key (Use FLWPUBK_TEST-... for testing, FLWPUBK-... for live)
+        const FLUTTERWAVE_PUBLIC_KEY = "FLWPUBK_TEST-005620341f9e9860c442b15bcaaeff19-X";
 
-            const amountButtons = document.querySelectorAll(".amount-btn");
-            const customAmountInput = document.getElementById("customAmount");
-            const donateForm = document.getElementById("anuraDonateForm");
-            const donateBtn = document.getElementById("donateBtn");
-            const donateError = document.getElementById("donateError");
-            const donateSuccess = document.getElementById("donateSuccess");
+        const amountButtons = document.querySelectorAll(".amount-btn");
+        const customAmountInput = document.getElementById("customAmount");
+        const donateForm = document.getElementById("anuraDonateForm");
+        const donateBtn = document.getElementById("donateBtn");
+        const donateError = document.getElementById("donateError");
+        const donateSuccess = document.getElementById("donateSuccess");
 
-            let selectedAmount = 0;
+        let selectedAmount = 0;
 
-            function formatNaira(n) {
-                return "₦" + n.toLocaleString("en-NG");
+        function formatNaira(n) {
+            return "₦" + n.toLocaleString("en-NG");
+        }
+
+        function selectAmount(amount, activeBtn) {
+            selectedAmount = amount;
+            amountButtons.forEach((b) => b.classList.remove("active"));
+            if (activeBtn) activeBtn.classList.add("active");
+            donateBtn.textContent = amount > 0 ? "Donate " + formatNaira(amount) : "Donate";
+        }
+
+        amountButtons.forEach((btn) => {
+            btn.addEventListener("click", () => {
+                customAmountInput.value = "";
+                selectAmount(parseInt(btn.dataset.amount, 10), btn);
+            });
+        });
+
+        customAmountInput.addEventListener("input", () => {
+            amountButtons.forEach((b) => b.classList.remove("active"));
+            selectAmount(parseInt(customAmountInput.value, 10) || 0, null);
+        });
+
+        donateForm.addEventListener("submit", function (e) {
+            e.preventDefault();
+            donateError.style.display = "none";
+
+            const name = document.getElementById("donorName").value.trim();
+            const email = document.getElementById("donorEmail").value.trim();
+
+            if (!selectedAmount || selectedAmount < 100) {
+                donateError.textContent = "Please choose or enter a valid donation amount.";
+                donateError.style.display = "block";
+                return;
+            }
+            if (!name || !email) {
+                donateError.textContent = "Please fill in your name and email.";
+                donateError.style.display = "block";
+                return;
+            }
+            if (FLUTTERWAVE_PUBLIC_KEY.includes("REPLACE_WITH_YOUR_KEY")) {
+                donateError.textContent = "Donations aren't set up yet — add a valid Flutterwave public key.";
+                donateError.style.display = "block";
+                return;
             }
 
-            function selectAmount(amount, activeBtn) {
-                selectedAmount = amount;
-                amountButtons.forEach((b) => b.classList.remove("active"));
-                if (activeBtn) activeBtn.classList.add("active");
-                donateBtn.textContent = amount > 0 ? "Donate " + formatNaira(amount) : "Donate";
-            }
+            donateBtn.disabled = true;
+            const originalLabel = donateBtn.textContent;
+            donateBtn.textContent = "Processing...";
 
-            amountButtons.forEach((btn) => {
-                btn.addEventListener("click", () => {
-                    customAmountInput.value = "";
-                    selectAmount(parseInt(btn.dataset.amount, 10), btn);
-                });
-            });
+            // Generate a unique transaction reference
+            const txRef = "ANURA-" + Date.now() + "-" + Math.floor(Math.random() * 1000);
 
-            customAmountInput.addEventListener("input", () => {
-                amountButtons.forEach((b) => b.classList.remove("active"));
-                selectAmount(parseInt(customAmountInput.value, 10) || 0, null);
-            });
-
-            donateForm.addEventListener("submit", function (e) {
-                e.preventDefault();
-                donateError.style.display = "none";
-
-                const name = document.getElementById("donorName").value.trim();
-                const email = document.getElementById("donorEmail").value.trim();
-
-                if (!selectedAmount || selectedAmount < 100) {
-                    donateError.textContent = "Please choose or enter a valid donation amount.";
-                    donateError.style.display = "block";
-                    return;
-                }
-                if (!name || !email) {
-                    donateError.textContent = "Please fill in your name and email.";
-                    donateError.style.display = "block";
-                    return;
-                }
-                if (PAYSTACK_PUBLIC_KEY.indexOf("REPLACE_WITH_YOUR_KEY") !== -1) {
-                    donateError.textContent = "Donations aren't set up yet — add a Paystack public key to enable this form.";
-                    donateError.style.display = "block";
-                    return;
-                }
-
-                donateBtn.disabled = true;
-                const originalLabel = donateBtn.textContent;
-                donateBtn.textContent = "Processing...";
-
-                const paystack = new PaystackPop();
-                paystack.newTransaction({
-                    key: PAYSTACK_PUBLIC_KEY,
+            FlutterwaveCheckout({
+                public_key: FLUTTERWAVE_PUBLIC_KEY,
+                tx_ref: txRef,
+                amount: selectedAmount, // Flutterwave takes standard amount units (Naira)
+                currency: "NGN",
+                payment_options: "card, banktransfer, ussd",
+                customer: {
                     email: email,
-                    amount: selectedAmount * 100, // Paystack expects the amount in kobo
-                    currency: "NGN",
-                    metadata: {
-                        custom_fields: [
-                            { display_name: "Donor Name", variable_name: "donor_name", value: name },
-                        ],
-                    },
-                    onSuccess: function () {
+                    name: name,
+                },
+                customizations: {
+                    title: "Ànúrà Initiative",
+                    description: "Donation for Anura",
+                    logo: "https://yourdomain.com/Ànúrà%20(Logo).png", // Optional: absolute path to your logo
+                },
+                callback: function (data) {
+                    // This function runs when the payment completes successfully
+                    if (data.status === "successful" || data.status === "completed") {
                         donateForm.style.display = "none";
                         donateSuccess.style.display = "block";
-                    },
-                    onCancel: function () {
+                    } else {
+                        donateError.textContent = "Payment was not successful. Please try again.";
+                        donateError.style.display = "block";
                         donateBtn.disabled = false;
                         donateBtn.textContent = originalLabel;
-                    },
-                });
+                    }
+                },
+                onclose: function () {
+                    // This function runs if the modal is dismissed by the user
+                    donateBtn.disabled = false;
+                    donateBtn.textContent = originalLabel;
+                },
             });
-        })();
-    </script>
+        });
+    })();
+</script>
 </body>
 </html>
