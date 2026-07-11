@@ -102,45 +102,111 @@
 
         <div class="detail-container">
 
-            <!-- Registration Form Section -->
-<div class="detail-section" id="register" style="max-width: 650px; margin: 0 auto 5rem; padding: 3rem; background: var(--glass-bg, rgba(255,255,255,0.6)); backdrop-filter: blur(12px); border-radius: 24px; border: 1px solid var(--glass-border, rgba(196,168,224,0.3)); box-shadow: 0 20px 40px rgba(107, 58, 110, 0.05);">
+<!-- Registration Form Section -->
+<div class="detail-section" id="register" style="max-width: 750px; margin: 0 auto 5rem; padding: 3rem; background: var(--glass-bg, rgba(255,255,255,0.6)); backdrop-filter: blur(12px); border-radius: 24px; border: 1px solid var(--glass-border, rgba(196,168,224,0.3)); box-shadow: 0 20px 40px rgba(107, 58, 110, 0.05);">
     
-    <h2 style="text-align: center; margin-bottom: 0.5rem;">Secure Your Spot</h2>
-    <p style="text-align: center; color: var(--text-light); margin-bottom: 2.5rem;">Register for the 2026 STEAM Challenge.</p>
+    <h2 style="text-align: center; margin-bottom: 0.5rem;">Program Registration Form</h2>
+    <p style="text-align: center; color: var(--text-light); margin-bottom: 2.5rem; line-height: 1.6;">
+        Welcome! This program is designed to provide young girls with opportunities to explore and excel in STEAM fields.<br>
+        Fill out the information below to secure your spot.
+    </p>
     
     <!-- Formspree Success/Error Messages -->
     <div data-fs-success style="display: none; padding: 1.5rem; background: rgba(76, 175, 80, 0.1); color: #2e7d32; border-radius: 12px; margin-bottom: 1.5rem; text-align: center; border: 1px solid rgba(76, 175, 80, 0.2); font-weight: 600;">
-        Registration successful! We will be in touch shortly.
+        Registration successful! We will be in touch shortly with further details.
     </div>
     <div data-fs-error style="display: none; padding: 1.5rem; background: rgba(244, 67, 54, 0.1); color: #c62828; border-radius: 12px; margin-bottom: 1.5rem; text-align: center; border: 1px solid rgba(244, 67, 54, 0.2); font-weight: 600;">
         Something went wrong. Please check your details and try again.
     </div>
 
-    <!-- The Form -->
-    <form id="anura-register-form" style="display: flex; flex-direction: column; gap: 1.5rem;">
+    <!-- The Form (enctype added for image uploads) -->
+    <form id="anura-register-form" enctype="multipart/form-data" style="display: flex; flex-direction: column; gap: 2rem;">
         
-        <div>
-            <label for="studentName" style="font-weight: 600; display: block; margin-bottom: 0.5rem; color: var(--text-dark);">Student's Full Name</label>
-            <input type="text" id="studentName" name="studentName" required data-fs-field style="width: 100%; padding: 1rem; border-radius: 12px; border: 1px solid #ddd; font-family: inherit; font-size: 1rem; background: rgba(255,255,255,0.8); box-sizing: border-box;">
-            <span data-fs-error="studentName" style="color: #c62828; font-size: 0.85rem; display: block; margin-top: 0.4rem;"></span>
+        <!-- SECTION 1: Student Information -->
+        <div style="background: rgba(255,255,255,0.4); padding: 2rem; border-radius: 16px; border: 1px solid rgba(196,168,224,0.2);">
+            <h3 style="color: var(--primary-purple, #6b3a6e); margin-bottom: 1.5rem; font-size: 1.4rem; border-bottom: 2px solid rgba(107,58,110,0.1); padding-bottom: 0.5rem;">1. Student Information</h3>
+            
+            <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                <div>
+                    <label for="fullName" style="font-weight: 600; display: block; margin-bottom: 0.5rem; color: var(--text-dark);">Full Name *</label>
+                    <input type="text" id="fullName" name="fullName" required data-fs-field style="width: 100%; padding: 1rem; border-radius: 12px; border: 1px solid #ddd; font-family: inherit; font-size: 1rem; background: rgba(255,255,255,0.8); box-sizing: border-box;">
+                    <span data-fs-error="fullName" style="color: #c62828; font-size: 0.85rem; display: block; margin-top: 0.4rem;"></span>
+                </div>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem;">
+                    <div>
+                        <label for="dob" style="font-weight: 600; display: block; margin-bottom: 0.5rem; color: var(--text-dark);">Date of Birth *</label>
+                        <input type="date" id="dob" name="dob" required data-fs-field style="width: 100%; padding: 1rem; border-radius: 12px; border: 1px solid #ddd; font-family: inherit; font-size: 1rem; background: rgba(255,255,255,0.8); box-sizing: border-box;">
+                        <span data-fs-error="dob" style="color: #c62828; font-size: 0.85rem; display: block; margin-top: 0.4rem;"></span>
+                    </div>
+                    <div>
+                        <label for="studentPhone" style="font-weight: 600; display: block; margin-bottom: 0.5rem; color: var(--text-dark);">Phone Number *</label>
+                        <input type="tel" id="studentPhone" name="studentPhone" required data-fs-field style="width: 100%; padding: 1rem; border-radius: 12px; border: 1px solid #ddd; font-family: inherit; font-size: 1rem; background: rgba(255,255,255,0.8); box-sizing: border-box;">
+                        <span data-fs-error="studentPhone" style="color: #c62828; font-size: 0.85rem; display: block; margin-top: 0.4rem;"></span>
+                    </div>
+                </div>
+
+                <div>
+                    <label for="studentEmail" style="font-weight: 600; display: block; margin-bottom: 0.5rem; color: var(--text-dark);">Email Address *</label>
+                    <input type="email" id="studentEmail" name="studentEmail" required data-fs-field style="width: 100%; padding: 1rem; border-radius: 12px; border: 1px solid #ddd; font-family: inherit; font-size: 1rem; background: rgba(255,255,255,0.8); box-sizing: border-box;">
+                    <span data-fs-error="studentEmail" style="color: #c62828; font-size: 0.85rem; display: block; margin-top: 0.4rem;"></span>
+                </div>
+
+                <div>
+                    <label for="studentImage" style="font-weight: 600; display: block; margin-bottom: 0.5rem; color: var(--text-dark);">Please upload a clear image of yourself *</label>
+                    <input type="file" id="studentImage" name="studentImage" accept="image/*" required data-fs-field style="width: 100%; padding: 0.8rem; border-radius: 12px; border: 1px dashed #aaa; font-family: inherit; font-size: 1rem; background: rgba(255,255,255,0.5); box-sizing: border-box; cursor: pointer;">
+                    <span data-fs-error="studentImage" style="color: #c62828; font-size: 0.85rem; display: block; margin-top: 0.4rem;"></span>
+                </div>
+            </div>
         </div>
 
-        <div>
-            <label for="parentEmail" style="font-weight: 600; display: block; margin-bottom: 0.5rem; color: var(--text-dark);">Parent/Guardian Email</label>
-            <input type="email" id="parentEmail" name="parentEmail" required data-fs-field style="width: 100%; padding: 1rem; border-radius: 12px; border: 1px solid #ddd; font-family: inherit; font-size: 1rem; background: rgba(255,255,255,0.8); box-sizing: border-box;">
-            <span data-fs-error="parentEmail" style="color: #c62828; font-size: 0.85rem; display: block; margin-top: 0.4rem;"></span>
+        <!-- SECTION 2: Parent/Guardian Information -->
+        <div style="background: rgba(255,255,255,0.4); padding: 2rem; border-radius: 16px; border: 1px solid rgba(196,168,224,0.2);">
+            <h3 style="color: var(--primary-purple, #6b3a6e); margin-bottom: 1.5rem; font-size: 1.4rem; border-bottom: 2px solid rgba(107,58,110,0.1); padding-bottom: 0.5rem;">2. Parent/Guardian Contact</h3>
+            
+            <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                <div>
+                    <label for="parentName" style="font-weight: 600; display: block; margin-bottom: 0.5rem; color: var(--text-dark);">Parent/Guardian Name *</label>
+                    <input type="text" id="parentName" name="parentName" required data-fs-field style="width: 100%; padding: 1rem; border-radius: 12px; border: 1px solid #ddd; font-family: inherit; font-size: 1rem; background: rgba(255,255,255,0.8); box-sizing: border-box;">
+                    <span data-fs-error="parentName" style="color: #c62828; font-size: 0.85rem; display: block; margin-top: 0.4rem;"></span>
+                </div>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem;">
+                    <div>
+                        <label for="parentPhone" style="font-weight: 600; display: block; margin-bottom: 0.5rem; color: var(--text-dark);">Parent/Guardian Phone *</label>
+                        <input type="tel" id="parentPhone" name="parentPhone" required data-fs-field style="width: 100%; padding: 1rem; border-radius: 12px; border: 1px solid #ddd; font-family: inherit; font-size: 1rem; background: rgba(255,255,255,0.8); box-sizing: border-box;">
+                        <span data-fs-error="parentPhone" style="color: #c62828; font-size: 0.85rem; display: block; margin-top: 0.4rem;"></span>
+                    </div>
+                    <div>
+                        <label for="parentEmail" style="font-weight: 600; display: block; margin-bottom: 0.5rem; color: var(--text-dark);">Parent/Guardian Email *</label>
+                        <input type="email" id="parentEmail" name="parentEmail" required data-fs-field style="width: 100%; padding: 1rem; border-radius: 12px; border: 1px solid #ddd; font-family: inherit; font-size: 1rem; background: rgba(255,255,255,0.8); box-sizing: border-box;">
+                        <span data-fs-error="parentEmail" style="color: #c62828; font-size: 0.85rem; display: block; margin-top: 0.4rem;"></span>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <div>
-            <label for="studentAge" style="font-weight: 600; display: block; margin-bottom: 0.5rem; color: var(--text-dark);">Student's Age (11-18)</label>
-            <input type="number" id="studentAge" name="studentAge" min="11" max="18" required data-fs-field style="width: 100%; padding: 1rem; border-radius: 12px; border: 1px solid #ddd; font-family: inherit; font-size: 1rem; background: rgba(255,255,255,0.8); box-sizing: border-box;">
-            <span data-fs-error="studentAge" style="color: #c62828; font-size: 0.85rem; display: block; margin-top: 0.4rem;"></span>
-        </div>
+        <!-- SECTION 3: Additional Details -->
+        <div style="background: rgba(255,255,255,0.4); padding: 2rem; border-radius: 16px; border: 1px solid rgba(196,168,224,0.2);">
+            <h3 style="color: var(--primary-purple, #6b3a6e); margin-bottom: 1.5rem; font-size: 1.4rem; border-bottom: 2px solid rgba(107,58,110,0.1); padding-bottom: 0.5rem;">3. Program Details</h3>
+            
+            <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                <div>
+                    <label for="attendance" style="font-weight: 600; display: block; margin-bottom: 0.5rem; color: var(--text-dark);">Will you be able to attend the program in person? *</label>
+                    <select id="attendance" name="attendance" required data-fs-field style="width: 100%; padding: 1rem; border-radius: 12px; border: 1px solid #ddd; font-family: inherit; font-size: 1rem; background: rgba(255,255,255,0.8); box-sizing: border-box; cursor: pointer;">
+                        <option value="">-- Select an option --</option>
+                        <option value="Yes">Yes, I can attend in person</option>
+                        <option value="No">No, I cannot attend in person</option>
+                    </select>
+                    <span data-fs-error="attendance" style="color: #c62828; font-size: 0.85rem; display: block; margin-top: 0.4rem;"></span>
+                </div>
 
-        <div>
-            <label for="medicalInfo" style="font-weight: 600; display: block; margin-bottom: 0.5rem; color: var(--text-dark);">Medical Conditions or Allergies (Optional)</label>
-            <textarea id="medicalInfo" name="medicalInfo" rows="3" data-fs-field style="width: 100%; padding: 1rem; border-radius: 12px; border: 1px solid #ddd; font-family: inherit; font-size: 1rem; background: rgba(255,255,255,0.8); box-sizing: border-box; resize: vertical;"></textarea>
-            <span data-fs-error="medicalInfo" style="color: #c62828; font-size: 0.85rem; display: block; margin-top: 0.4rem;"></span>
+                <div>
+                    <label for="interestReason" style="font-weight: 600; display: block; margin-bottom: 0.5rem; color: var(--text-dark);">Why Are You Interested in This Program? *</label>
+                    <textarea id="interestReason" name="interestReason" rows="4" required data-fs-field style="width: 100%; padding: 1rem; border-radius: 12px; border: 1px solid #ddd; font-family: inherit; font-size: 1rem; background: rgba(255,255,255,0.8); box-sizing: border-box; resize: vertical;"></textarea>
+                    <span data-fs-error="interestReason" style="color: #c62828; font-size: 0.85rem; display: block; margin-top: 0.4rem;"></span>
+                </div>
+            </div>
         </div>
 
         <button type="submit" data-fs-submit-btn style="padding: 1.2rem; font-size: 1.1rem; border: none; cursor: pointer; border-radius: 30px; background: var(--primary-purple, #6b3a6e); color: white; margin-top: 1rem; font-weight: 600; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 4px 15px rgba(107, 58, 110, 0.3);">Submit Registration</button>
